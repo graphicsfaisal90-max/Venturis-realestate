@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-luxury-50: #f8f7f4;
+  --color-luxury-100: #f0ede6;
+  --color-luxury-200: #e0d9c9;
+  --color-luxury-300: #cbbfa5;
+  --color-luxury-400: #b4a07a;
+  --color-luxury-500: #a0885e;
+  --color-luxury-600: #8d734b;
+  --color-luxury-700: #755c3d;
+  --color-luxury-800: #624d36;
+  --color-luxury-900: #524030;
+
+  --color-gold-50: #fdf8e8;
+  --color-gold-100: #faedc5;
+  --color-gold-200: #f5d988;
+  --color-gold-300: #f0c44a;
+  --color-gold-400: #d4a843;
+  --color-gold-500: #b8942e;
+  --color-gold-600: #9a7a24;
+  --color-gold-700: #7d621c;
+  --color-gold-800: #634e16;
+  --color-gold-900: #4d3c11;
+
+  --color-navy-50: #f0f3f9;
+  --color-navy-100: #d9e0f0;
+  --color-navy-200: #b3c1e1;
+  --color-navy-300: #869dcb;
+  --color-navy-400: #5a79b5;
+  --color-navy-500: #3a5a9f;
+  --color-navy-600: #2d4782;
+  --color-navy-700: #1f3058;
+  --color-navy-800: #141f3d;
+  --color-navy-900: #0c1326;
+
+  --color-silver-50: #f8f9fa;
+  --color-silver-100: #f1f3f5;
+  --color-silver-200: #e9ecef;
+  --color-silver-300: #dee2e6;
+  --color-silver-400: #ced4da;
+  --color-silver-500: #adb5bd;
+  --color-silver-600: #868e96;
+  --color-silver-700: #5a6268;
+  --color-silver-800: #343a40;
+  --color-silver-900: #1a1d21;
+
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-heading: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-playfair), Georgia, serif;
+
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
+  --animate-slide-down: slide-down 0.6s ease-out forwards;
+  --animate-scale-in: scale-in 0.5s ease-out forwards;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 5px rgba(212, 168, 67, 0.2), 0 0 10px rgba(212, 168, 67, 0.1); }
+  to { box-shadow: 0 0 10px rgba(212, 168, 67, 0.4), 0 0 20px rgba(212, 168, 67, 0.2); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+:root {
+  --background: #0c0c0c;
+  --foreground: #f8f7f4;
+  --card: #141414;
+  --card-hover: #1c1c1c;
+  --border: #2a2a2a;
+  --muted: #868e96;
+  --accent: #b8942e;
+  --accent-hover: #d4a843;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(184, 148, 46, 0.3);
+  color: #fff;
+}
+
+.font-num {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.glass {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #b8942e 0%, #d4a843 30%, #f0c44a 60%, #d4a843 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #b8942e 0%, #d4a843 50%, #f0c44a 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--foreground) 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--foreground) 0%, var(--accent) 25%, var(--foreground) 50%, var(--accent) 75%, var(--foreground) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+.luxury-shadow {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.luxury-shadow-gold {
+  box-shadow: 0 4px 30px rgba(184, 148, 46, 0.15), 0 1px 8px rgba(184, 148, 46, 0.05);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.section-padding {
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 8rem 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .section-padding {
+    padding: 10rem 4rem;
+  }
+}
+
+.container-luxury {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-luxury {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-luxury {
+    padding: 0 4rem;
+  }
+}
+
+.parallax-layer {
+  will-change: transform;
+}
+
+.hero-clip {
+  clip-path: inset(0);
+}
+
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-hover {
+  overflow: hidden;
+}
+
+.image-hover img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.image-hover:hover img {
+  transform: scale(1.05);
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
