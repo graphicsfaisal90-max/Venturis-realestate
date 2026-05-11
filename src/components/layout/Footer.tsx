@@ -54,10 +54,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl font-bold tracking-tight">
-                <span className="text-white">VENTURIS</span>
-                <span className="gold-gradient">.</span>
-              </span>
+              <img src="/images/logo.png" alt="Venturis Realtors" className="h-10 w-auto" />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed max-w-sm mb-6">
               {siteConfig.description}

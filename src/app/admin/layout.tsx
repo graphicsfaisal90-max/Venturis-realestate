@@ -67,9 +67,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         }`}
       >
         <div className="p-6 border-b border-[#222]">
-          <Link href="/admin" className="text-lg font-bold tracking-wider">
-            <span className="gold-gradient">Venturis</span>
-            <span className="text-[#666] ml-1">Admin</span>
+          <Link href="/admin" className="flex items-center gap-2">
+            <img src="/images/logo.png" alt="Venturis" className="h-7 w-auto" />
+            <span className="text-[#666] text-lg font-bold">Admin</span>
           </Link>
         </div>
 

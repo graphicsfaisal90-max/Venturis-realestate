@@ -49,10 +49,7 @@ export default function Header() {
       <div className="container-luxury">
         <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/" className="relative z-10">
-            <span className="text-xl md:text-2xl font-bold tracking-tight">
-              <span className="text-white">VENTURIS</span>
-              <span className="gold-gradient">.</span>
-            </span>
+            <img src="/images/logo.png" alt="Venturis Realtors" className="h-10 md:h-12 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
