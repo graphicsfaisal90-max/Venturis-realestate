@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Star, Plus, Edit3, Trash2, Search, X, Save } from "lucide-react";
 import { testimonialsData } from "@/lib/constants";
+import ImageUpload from "@/components/admin/ImageUpload";
 
 interface TestimonialForm {
   clientName: string;
@@ -91,7 +92,7 @@ export default function TestimonialsPage() {
         </div>
         <button
           onClick={openAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#b8942e] text-black rounded-lg hover:bg-[#d4a843] transition-colors text-sm font-medium"
+          className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-colors text-sm font-medium"
         >
           <Plus size={16} />
           Add Testimonial
@@ -106,7 +107,7 @@ export default function TestimonialsPage() {
             placeholder="Search testimonials..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#b8942e]"
+            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#988060]"
           />
         </div>
       </div>
@@ -140,13 +141,13 @@ export default function TestimonialsPage() {
                   <Star
                     key={i}
                     size={12}
-                    className={i < t.rating ? "text-[#b8942e] fill-[#b8942e]" : "text-[#333]"}
+                    className={i < t.rating ? "text-[#988060] fill-[#988060]" : "text-[#333]"}
                   />
                 ))}
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#888]">{t.propertyType}</span>
-                {t.isFeatured && <span className="text-[#b8942e]">Featured</span>}
+                {t.isFeatured && <span className="text-[#988060]">Featured</span>}
               </div>
             </div>
           </div>
@@ -174,7 +175,7 @@ export default function TestimonialsPage() {
                   type="text"
                   value={form.clientName}
                   onChange={(e) => setForm((prev) => ({ ...prev, clientName: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   required
                 />
               </div>
@@ -184,26 +185,22 @@ export default function TestimonialsPage() {
                   type="text"
                   value={form.clientTitle}
                   onChange={(e) => setForm((prev) => ({ ...prev, clientTitle: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   placeholder="e.g. Luxury Villa Buyer, Beverly Hills"
                 />
               </div>
-              <div>
-                <label className="block text-sm text-[#888] mb-1">Client Image URL</label>
-                <input
-                  type="url"
-                  value={form.clientImage}
-                  onChange={(e) => setForm((prev) => ({ ...prev, clientImage: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
-                />
-              </div>
+              <ImageUpload
+                currentImage={form.clientImage}
+                onUpload={(url) => setForm((prev) => ({ ...prev, clientImage: url }))}
+                label="Client Photo"
+              />
               <div>
                 <label className="block text-sm text-[#888] mb-1">Testimonial</label>
                 <textarea
                   value={form.content}
                   onChange={(e) => setForm((prev) => ({ ...prev, content: e.target.value }))}
                   rows={4}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e] resize-none"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
                   required
                 />
               </div>
@@ -213,7 +210,7 @@ export default function TestimonialsPage() {
                   <select
                     value={form.rating}
                     onChange={(e) => setForm((prev) => ({ ...prev, rating: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   >
                     {[5, 4, 3, 2, 1].map((r) => (
                       <option key={r} value={r}>{r} Star{r > 1 ? "s" : ""}</option>
@@ -226,7 +223,7 @@ export default function TestimonialsPage() {
                     type="text"
                     value={form.propertyType}
                     onChange={(e) => setForm((prev) => ({ ...prev, propertyType: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                     placeholder="e.g. Villa, Penthouse"
                   />
                 </div>
@@ -236,7 +233,7 @@ export default function TestimonialsPage() {
                   type="checkbox"
                   checked={form.isFeatured}
                   onChange={(e) => setForm((prev) => ({ ...prev, isFeatured: e.target.checked }))}
-                  className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#b8942e] focus:ring-[#b8942e]"
+                  className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#988060] focus:ring-[#988060]"
                 />
                 <span className="text-sm text-white">Featured Testimonial</span>
               </label>
@@ -244,7 +241,7 @@ export default function TestimonialsPage() {
                 <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 rounded-lg border border-[#333] text-[#888] hover:text-white text-sm">
                   Cancel
                 </button>
-                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#b8942e] text-black rounded-lg hover:bg-[#d4a843] text-sm font-medium">
+                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] text-sm font-medium">
                   <Save size={14} />
                   {editingId ? "Update" : "Save"}
                 </button>

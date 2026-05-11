@@ -6,6 +6,8 @@ import { ArrowLeft, Save } from "lucide-react";
 import Link from "next/link";
 import { slugify } from "@/lib/utils";
 import { amenitiesList } from "@/lib/constants";
+import ImageUpload from "@/components/admin/ImageUpload";
+import { GalleryUpload } from "@/components/admin/ImageUpload";
 
 const propertyTypes = ["apartment", "villa", "penthouse", "commercial", "office", "land"];
 const purposes = ["buy", "rent"];
@@ -371,35 +373,16 @@ export default function NewPropertyPage() {
 
         <div className="glass rounded-xl p-6 space-y-4">
           <h2 className="text-lg font-semibold text-white mb-4">Media</h2>
-          <div>
-            <label className="block text-sm text-[#888] mb-1">Featured Image URL</label>
-            <input
-              type="url"
-              value={form.featuredImage}
-              onChange={(e) => update("featuredImage", e.target.value)}
-              className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
-            />
-          </div>
-          <div>
-            <div className="flex items-center justify-between mb-1">
-              <label className="block text-sm text-[#888]">Additional Images</label>
-              <button type="button" onClick={addImage} className="text-xs text-[#988060] hover:text-[#9D8653]">+ Add Image</button>
-            </div>
-            {form.images.map((img, i) => (
-              <div key={i} className="flex items-center gap-2 mb-2">
-                <input
-                  type="url"
-                  value={img}
-                  onChange={(e) => updateImage(i, e.target.value)}
-                  className="flex-1 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
-                  placeholder="Image URL..."
-                />
-                {form.images.length > 1 && (
-                  <button type="button" onClick={() => removeImage(i)} className="text-red-400 hover:text-red-300 text-xs">Remove</button>
-                )}
-              </div>
-            ))}
-          </div>
+          <ImageUpload
+            currentImage={form.featuredImage}
+            onUpload={(url) => update("featuredImage", url)}
+            label="Featured Image"
+          />
+          <GalleryUpload
+            images={form.images.filter(Boolean)}
+            onImagesChange={(images) => update("images", images.length > 0 ? images : [""])}
+            label="Gallery Images"
+          />
         </div>
 
         <div className="glass rounded-xl p-6 space-y-4">

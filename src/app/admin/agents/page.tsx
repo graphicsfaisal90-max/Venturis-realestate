@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Users, Plus, Edit3, Trash2, Search, X, Save } from "lucide-react";
 import { agentsData } from "@/lib/constants";
+import ImageUpload from "@/components/admin/ImageUpload";
+import { GalleryUpload } from "@/components/admin/ImageUpload";
 
 interface AgentForm {
   name: string;
@@ -16,6 +18,7 @@ interface AgentForm {
   specialties: string;
   rating: string;
   isFeatured: boolean;
+  gallery: string[];
 }
 
 const emptyForm: AgentForm = {
@@ -30,6 +33,7 @@ const emptyForm: AgentForm = {
   specialties: "",
   rating: "5",
   isFeatured: false,
+  gallery: [],
 };
 
 export default function AgentsPage() {
@@ -65,6 +69,7 @@ export default function AgentsPage() {
       specialties: agent.specialties.join(", "),
       rating: String(agent.rating),
       isFeatured: agent.isFeatured,
+      gallery: (agent as any).gallery || [],
     });
     setShowModal(true);
   };
@@ -115,7 +120,7 @@ export default function AgentsPage() {
         </div>
         <button
           onClick={openAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#b8942e] text-black rounded-lg hover:bg-[#d4a843] transition-colors text-sm font-medium"
+          className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-colors text-sm font-medium"
         >
           <Plus size={16} />
           Add Agent
@@ -130,7 +135,7 @@ export default function AgentsPage() {
             placeholder="Search agents..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#b8942e]"
+            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#988060]"
           />
         </div>
       </div>
@@ -158,7 +163,7 @@ export default function AgentsPage() {
             <p className="text-xs text-[#666] line-clamp-2 mb-3">{agent.bio}</p>
             <div className="flex items-center justify-between text-xs text-[#888]">
               <span>★ {agent.rating} ({agent.reviewCount} reviews)</span>
-              {agent.isFeatured && <span className="text-[#b8942e]">Featured</span>}
+              {agent.isFeatured && <span className="text-[#988060]">Featured</span>}
             </div>
           </div>
         ))}
@@ -185,7 +190,7 @@ export default function AgentsPage() {
                   type="text"
                   value={form.name}
                   onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   required
                 />
               </div>
@@ -195,7 +200,7 @@ export default function AgentsPage() {
                   type="text"
                   value={form.title}
                   onChange={(e) => setForm((prev) => ({ ...prev, title: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -205,7 +210,7 @@ export default function AgentsPage() {
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   />
                 </div>
                 <div>
@@ -214,26 +219,27 @@ export default function AgentsPage() {
                     type="text"
                     value={form.phone}
                     onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   />
                 </div>
               </div>
-              <div>
-                <label className="block text-sm text-[#888] mb-1">Image URL</label>
-                <input
-                  type="url"
-                  value={form.image}
-                  onChange={(e) => setForm((prev) => ({ ...prev, image: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
-                />
-              </div>
+              <ImageUpload
+                currentImage={form.image}
+                onUpload={(url) => setForm((prev) => ({ ...prev, image: url }))}
+                label="Agent Photo"
+              />
+              <GalleryUpload
+                images={form.gallery}
+                onImagesChange={(images) => setForm((prev) => ({ ...prev, gallery: images }))}
+                label="Gallery Images"
+              />
               <div>
                 <label className="block text-sm text-[#888] mb-1">Bio</label>
                 <textarea
                   value={form.bio}
                   onChange={(e) => setForm((prev) => ({ ...prev, bio: e.target.value }))}
                   rows={3}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e] resize-none"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
                 />
               </div>
               <div>
@@ -242,7 +248,7 @@ export default function AgentsPage() {
                   type="text"
                   value={form.specialties}
                   onChange={(e) => setForm((prev) => ({ ...prev, specialties: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                 />
               </div>
               <div className="flex items-center gap-4">
@@ -255,7 +261,7 @@ export default function AgentsPage() {
                     max="5"
                     value={form.rating}
                     onChange={(e) => setForm((prev) => ({ ...prev, rating: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   />
                 </div>
                 <label className="flex items-center gap-2 cursor-pointer pt-5">
@@ -263,7 +269,7 @@ export default function AgentsPage() {
                     type="checkbox"
                     checked={form.isFeatured}
                     onChange={(e) => setForm((prev) => ({ ...prev, isFeatured: e.target.checked }))}
-                    className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#b8942e] focus:ring-[#b8942e]"
+                    className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#988060] focus:ring-[#988060]"
                   />
                   <span className="text-sm text-white">Featured</span>
                 </label>
@@ -272,7 +278,7 @@ export default function AgentsPage() {
                 <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 rounded-lg border border-[#333] text-[#888] hover:text-white text-sm">
                   Cancel
                 </button>
-                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#b8942e] text-black rounded-lg hover:bg-[#d4a843] text-sm font-medium">
+                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] text-sm font-medium">
                   <Save size={14} />
                   {editingId ? "Update" : "Save"}
                 </button>

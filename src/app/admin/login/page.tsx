@@ -19,7 +19,7 @@ export default function AdminLoginPage() {
 
     try {
       // For now, use mock credentials
-      if (email === "admin@venturisrealtors.com" && password === "admin123") {
+      if (email === "admin@venturisrealtors.com" && password === "F@isal098") {
         sessionStorage.setItem("venturis_admin_logged_in", "true");
         router.push("/admin");
       } else {
@@ -66,7 +66,7 @@ export default function AdminLoginPage() {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="admin123"
+                  placeholder="F@isal098"
                   className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg py-2.5 px-4 pr-10 text-sm text-white placeholder:text-[#555] focus:outline-none focus:border-[#988060] transition-colors"
                   required
                 />
@@ -108,7 +108,7 @@ export default function AdminLoginPage() {
             <p className="text-xs text-[#555] text-center mt-1">
               Email: <span className="text-[#888]">admin@venturisrealtors.com</span>
               {" | "}
-              Password: <span className="text-[#888]">admin123</span>
+              Password: <span className="text-[#888]">F@isal098</span>
             </p>
           </div>
         </div>

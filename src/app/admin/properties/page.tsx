@@ -35,7 +35,7 @@ export default function PropertiesPage() {
         </div>
         <Link
           href="/admin/properties/new"
-          className="flex items-center gap-2 px-4 py-2 bg-[#b8942e] text-black rounded-lg hover:bg-[#d4a843] transition-colors text-sm font-medium"
+          className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-colors text-sm font-medium"
         >
           <Plus size={16} />
           Add New Property
@@ -50,7 +50,7 @@ export default function PropertiesPage() {
             placeholder="Search properties..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#b8942e]"
+            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#988060]"
           />
         </div>
       </div>
@@ -109,7 +109,7 @@ export default function PropertiesPage() {
                     <button
                       onClick={() => toggleFeatured(property.id)}
                       className={`text-sm font-medium transition-colors ${
-                        property.isFeatured ? "text-[#b8942e]" : "text-[#555] hover:text-[#888]"
+                        property.isFeatured ? "text-[#988060]" : "text-[#555] hover:text-[#888]"
                       }`}
                     >
                       {property.isFeatured ? "★ Featured" : "☆ Not Featured"}

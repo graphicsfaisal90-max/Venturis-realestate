@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { FileText, Plus, Edit3, Trash2, Search, X, Save } from "lucide-react";
 import { blogData, blogCategories } from "@/lib/constants";
+import ImageUpload from "@/components/admin/ImageUpload";
+import { GalleryUpload } from "@/components/admin/ImageUpload";
 
 interface BlogForm {
   title: string;
@@ -17,6 +19,7 @@ interface BlogForm {
   readTime: string;
   isFeatured: boolean;
   publishedAt: string;
+  gallery: string[];
 }
 
 const emptyForm: BlogForm = {
@@ -32,6 +35,7 @@ const emptyForm: BlogForm = {
   readTime: "5",
   isFeatured: false,
   publishedAt: new Date().toISOString().split("T")[0],
+  gallery: [],
 };
 
 export default function BlogsPage() {
@@ -70,6 +74,7 @@ export default function BlogsPage() {
       readTime: String(post.readTime),
       isFeatured: post.isFeatured,
       publishedAt: post.publishedAt,
+      gallery: (post as any).gallery || [],
     });
     setShowModal(true);
   };
@@ -116,7 +121,7 @@ export default function BlogsPage() {
         </div>
         <button
           onClick={openAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#b8942e] text-black rounded-lg hover:bg-[#d4a843] transition-colors text-sm font-medium"
+          className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-colors text-sm font-medium"
         >
           <Plus size={16} />
           Add Post
@@ -131,7 +136,7 @@ export default function BlogsPage() {
             placeholder="Search posts..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#b8942e]"
+            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#988060]"
           />
         </div>
       </div>
@@ -171,7 +176,7 @@ export default function BlogsPage() {
                   </td>
                   <td className="px-4 py-4 text-sm text-[#888]">{post.publishedAt}</td>
                   <td className="px-4 py-4">
-                    <span className={`text-sm ${post.isFeatured ? "text-[#b8942e]" : "text-[#555]"}`}>
+                    <span className={`text-sm ${post.isFeatured ? "text-[#988060]" : "text-[#555]"}`}>
                       {post.isFeatured ? "Yes" : "No"}
                     </span>
                   </td>
@@ -212,7 +217,7 @@ export default function BlogsPage() {
                   type="text"
                   value={form.title}
                   onChange={(e) => setForm((prev) => ({ ...prev, title: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   required
                 />
               </div>
@@ -223,7 +228,7 @@ export default function BlogsPage() {
                     type="text"
                     value={form.slug}
                     onChange={(e) => setForm((prev) => ({ ...prev, slug: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   />
                 </div>
                 <div>
@@ -231,7 +236,7 @@ export default function BlogsPage() {
                   <select
                     value={form.category}
                     onChange={(e) => setForm((prev) => ({ ...prev, category: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   >
                     {blogCategories.map((cat) => (
                       <option key={cat} value={cat}>{cat}</option>
@@ -245,7 +250,7 @@ export default function BlogsPage() {
                   value={form.excerpt}
                   onChange={(e) => setForm((prev) => ({ ...prev, excerpt: e.target.value }))}
                   rows={2}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e] resize-none"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
                 />
               </div>
               <div>
@@ -254,7 +259,7 @@ export default function BlogsPage() {
                   value={form.content}
                   onChange={(e) => setForm((prev) => ({ ...prev, content: e.target.value }))}
                   rows={6}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e] resize-none"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
                   required
                 />
               </div>
@@ -265,7 +270,7 @@ export default function BlogsPage() {
                     type="text"
                     value={form.author}
                     onChange={(e) => setForm((prev) => ({ ...prev, author: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   />
                 </div>
                 <div>
@@ -274,29 +279,26 @@ export default function BlogsPage() {
                     type="number"
                     value={form.readTime}
                     onChange={(e) => setForm((prev) => ({ ...prev, readTime: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-sm text-[#888] mb-1">Cover Image URL</label>
-                  <input
-                    type="url"
-                    value={form.image}
-                    onChange={(e) => setForm((prev) => ({ ...prev, image: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm text-[#888] mb-1">Author Image URL</label>
-                  <input
-                    type="url"
-                    value={form.authorImage}
-                    onChange={(e) => setForm((prev) => ({ ...prev, authorImage: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
-                  />
-                </div>
+              <ImageUpload
+                currentImage={form.image}
+                onUpload={(url) => setForm((prev) => ({ ...prev, image: url }))}
+                label="Cover Image"
+              />
+              <ImageUpload
+                currentImage={form.authorImage}
+                onUpload={(url) => setForm((prev) => ({ ...prev, authorImage: url }))}
+                label="Author Photo"
+              />
+              <div className="col-span-2">
+                <GalleryUpload
+                  images={form.gallery}
+                  onImagesChange={(images) => setForm((prev) => ({ ...prev, gallery: images }))}
+                  label="Blog Gallery Images"
+                />
               </div>
               <div>
                 <label className="block text-sm text-[#888] mb-1">Tags (comma separated)</label>
@@ -304,7 +306,7 @@ export default function BlogsPage() {
                   type="text"
                   value={form.tags}
                   onChange={(e) => setForm((prev) => ({ ...prev, tags: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   placeholder="luxury, real-estate, trends"
                 />
               </div>
@@ -315,7 +317,7 @@ export default function BlogsPage() {
                     type="date"
                     value={form.publishedAt}
                     onChange={(e) => setForm((prev) => ({ ...prev, publishedAt: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#b8942e]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
                   />
                 </div>
                 <div className="flex items-end">
@@ -324,7 +326,7 @@ export default function BlogsPage() {
                       type="checkbox"
                       checked={form.isFeatured}
                       onChange={(e) => setForm((prev) => ({ ...prev, isFeatured: e.target.checked }))}
-                      className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#b8942e] focus:ring-[#b8942e]"
+                      className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#988060] focus:ring-[#988060]"
                     />
                     <span className="text-sm text-white">Featured Post</span>
                   </label>
@@ -334,7 +336,7 @@ export default function BlogsPage() {
                 <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 rounded-lg border border-[#333] text-[#888] hover:text-white text-sm">
                   Cancel
                 </button>
-                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#b8942e] text-black rounded-lg hover:bg-[#d4a843] text-sm font-medium">
+                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] text-sm font-medium">
                   <Save size={14} />
                   {editingId ? "Update" : "Publish"}
                 </button>
