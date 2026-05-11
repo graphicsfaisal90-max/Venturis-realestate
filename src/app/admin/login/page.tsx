@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="admin@venturisrealtors.com"
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg py-2.5 px-4 text-sm text-white placeholder:text-[#555] focus:outline-none focus:border-[#b8942e] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg py-2.5 px-4 text-sm text-white placeholder:text-[#555] focus:outline-none focus:border-[#988060] transition-colors"
                 required
               />
             </div>
@@ -67,7 +67,7 @@ export default function AdminLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="admin123"
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg py-2.5 px-4 pr-10 text-sm text-white placeholder:text-[#555] focus:outline-none focus:border-[#b8942e] transition-colors"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg py-2.5 px-4 pr-10 text-sm text-white placeholder:text-[#555] focus:outline-none focus:border-[#988060] transition-colors"
                   required
                 />
                 <button

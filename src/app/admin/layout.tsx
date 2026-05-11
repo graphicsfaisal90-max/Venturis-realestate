@@ -84,7 +84,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 px-6 py-3 text-sm transition-colors ${
                   isActive
-                    ? "text-[#b8942e] bg-[#b8942e]/10 border-r-2 border-[#b8942e]"
+                    ? "text-[#988060] bg-[#988060]/10 border-r-2 border-[#988060]"
                     : "text-[#888] hover:text-white hover:bg-[#1a1a1a]"
                 }`}
               >
