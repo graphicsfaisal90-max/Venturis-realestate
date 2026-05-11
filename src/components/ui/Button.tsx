@@ -19,12 +19,12 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       primary:
         "bg-white text-black hover:bg-gray-100 active:scale-[0.97]",
       secondary:
-        "bg-navy-800 text-white hover:bg-navy-700 active:scale-[0.97]",
+        "bg-gray-800 text-white hover:bg-gray-700 active:scale-[0.97]",
       gold:
         "gold-gradient-bg text-white hover:opacity-90 active:scale-[0.97]",
       outline:
-        "border border-white/20 text-white hover:bg-white/5 active:scale-[0.97]",
-      ghost: "text-white/70 hover:text-white hover:bg-white/5",
+        "border border-gray-300 text-gray-700 hover:bg-gray-50 active:scale-[0.97]",
+      ghost: "text-gray-500 hover:text-gray-900 hover:bg-gray-100",
     };
 
     const sizes = {

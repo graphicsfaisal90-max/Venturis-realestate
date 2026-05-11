@@ -36,24 +36,24 @@ export default function BlogCard({ post, index = 0 }: BlogCardProps) {
         </div>
 
         <div className="p-5">
-          <h3 className="text-sm font-semibold text-white leading-snug line-clamp-2 mb-2 group-hover:text-gold-400 transition-colors">
+          <h3 className="text-sm font-semibold text-gray-900 leading-snug line-clamp-2 mb-2 group-hover:text-gold-400 transition-colors">
             {post.title}
           </h3>
 
-          <p className="text-xs text-white/50 leading-relaxed line-clamp-2 mb-4">
+          <p className="text-xs text-gray-500 leading-relaxed line-clamp-2 mb-4">
             {truncate(post.excerpt, 100)}
           </p>
 
-          <div className="flex items-center justify-between pt-3 border-t border-white/5">
+          <div className="flex items-center justify-between pt-3 border-t border-gray-100">
             <div className="flex items-center gap-2">
               <img
                 src={post.authorImage}
                 alt={post.author}
                 className="w-6 h-6 rounded-full object-cover"
               />
-              <span className="text-[11px] text-white/40">{post.author}</span>
+              <span className="text-[11px] text-gray-400">{post.author}</span>
             </div>
-            <div className="flex items-center gap-3 text-[11px] text-white/30">
+            <div className="flex items-center gap-3 text-[11px] text-gray-400">
               <span className="flex items-center gap-1">
                 <Calendar className="w-3 h-3" />
                 {getTimeAgo(post.publishedAt)}

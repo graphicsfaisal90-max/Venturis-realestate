@@ -41,7 +41,7 @@ function StatItem({
           "0"
         )}
       </div>
-      <div className="text-sm uppercase tracking-[0.2em] text-white/40">
+      <div className="text-sm uppercase tracking-[0.2em] text-gray-500">
         {label}
       </div>
     </motion.div>
@@ -50,7 +50,7 @@ function StatItem({
 
 export default function StatsSection() {
   return (
-    <section className="py-20 md:py-28 bg-navy-800/50">
+    <section className="py-20 md:py-28 bg-gray-50">
       <div className="container-luxury">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {stats.map((stat, index) => (

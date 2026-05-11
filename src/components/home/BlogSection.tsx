@@ -11,7 +11,7 @@ export default function BlogSection() {
   const latestPosts = blogData.filter((p) => p.isFeatured).slice(0, 3);
 
   return (
-    <section className="py-20 md:py-28 bg-navy-900/30">
+    <section className="py-20 md:py-28 bg-gray-50">
       <div className="container-luxury">
         <SectionHeading
           title="Latest Insights"

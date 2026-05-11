@@ -46,7 +46,7 @@ function AnimatedCounter({
       >
         {value.toLocaleString()}{suffix}
       </motion.div>
-      <div className="text-xs uppercase tracking-[0.15em] text-white/40">
+      <div className="text-xs uppercase tracking-[0.15em] text-gray-400">
         {label}
       </div>
     </motion.div>
@@ -74,7 +74,7 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 gold-gradient-bg rounded-2xl -z-10 opacity-50 blur-2xl" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-navy-800 rounded-2xl -z-10 opacity-50 blur-2xl" />
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-gray-100 rounded-2xl -z-10 opacity-80 blur-2xl" />
           </motion.div>
 
           <motion.div
@@ -89,7 +89,7 @@ export default function AboutSection() {
               align="left"
             />
 
-            <div className="space-y-4 text-white/60 leading-relaxed text-sm md:text-base mb-8">
+            <div className="space-y-4 text-gray-600 leading-relaxed text-sm md:text-base mb-8">
               <p>
                 Venturis Realtors was founded on a simple belief: that the
                 experience of finding and owning a luxury property should be as

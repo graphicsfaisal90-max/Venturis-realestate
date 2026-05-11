@@ -61,9 +61,9 @@ const itemVariants = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#080808] border-t border-white/5 relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#988060]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#9D8653]/5 rounded-full blur-[100px] pointer-events-none" />
+    <footer className="bg-[#1a1a1a] text-white relative overflow-hidden">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#988060]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-[#9D8653]/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="container-luxury pt-20 pb-10 relative z-10">
         <motion.div
@@ -75,7 +75,7 @@ export default function Footer() {
         >
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6 group">
-              <img src="/images/logo.png" alt="Venturis Realtors" className="h-10 w-auto" />
+              <img src="/images/logo.png" alt="Venturis Realtors" className="h-10 w-auto brightness-0 invert" />
             </Link>
             <p className="text-white/40 text-sm leading-relaxed max-w-sm mb-6">
               {siteConfig.description}

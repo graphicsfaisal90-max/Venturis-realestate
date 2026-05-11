@@ -96,11 +96,11 @@
 }
 
 :root {
-  --background: #0c0c0c;
-  --foreground: #f8f7f4;
-  --card: #141414;
-  --card-hover: #1c1c1c;
-  --border: #2a2a2a;
+  --background: #f8f9fa;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-hover: #f8f9fa;
+  --border: #e5e5e5;
   --muted: #868e96;
   --accent: #988060;
   --accent-hover: #9D8653;
@@ -123,7 +123,7 @@ body {
 }
 
 ::selection {
-  background: rgba(152, 128, 96, 0.3);
+  background: rgba(152, 128, 96, 0.25);
   color: #fff;
 }
 
@@ -133,28 +133,28 @@ body {
 }
 
 .glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.glass-dark {
   background: rgba(20, 20, 20, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.glass-light {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
 .glass-brand {
-  background: rgba(58, 55, 46, 0.6);
+  background: rgba(152, 128, 96, 0.08);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(152, 128, 96, 0.15);
 }
 
 .glow-brand {
-  box-shadow: 0 0 20px rgba(152, 128, 96, 0.15), 0 0 40px rgba(152, 128, 96, 0.05);
+  box-shadow: 0 0 20px rgba(152, 128, 96, 0.12), 0 0 40px rgba(152, 128, 96, 0.04);
 }
 
 .gold-gradient {
@@ -185,11 +185,11 @@ body {
 }
 
 .luxury-shadow {
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), 0 1px 8px rgba(0, 0, 0, 0.04);
 }
 
 .luxury-shadow-gold {
-  box-shadow: 0 4px 30px rgba(152, 128, 96, 0.15), 0 1px 8px rgba(152, 128, 96, 0.05);
+  box-shadow: 0 4px 30px rgba(152, 128, 96, 0.12), 0 1px 8px rgba(152, 128, 96, 0.04);
 }
 
 .text-balance {
@@ -244,7 +244,7 @@ body {
 
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
 .image-hover {

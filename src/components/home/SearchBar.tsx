@@ -37,7 +37,7 @@ export default function SearchBar() {
                 "px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300",
                 purpose === "buy"
                   ? "gold-gradient-bg text-white"
-                  : "text-white/50 hover:text-white hover:bg-white/5"
+                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
               )}
             >
               Buy
@@ -48,7 +48,7 @@ export default function SearchBar() {
                 "px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300",
                 purpose === "rent"
                   ? "gold-gradient-bg text-white"
-                  : "text-white/50 hover:text-white hover:bg-white/5"
+                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
               )}
             >
               Rent
@@ -57,29 +57,29 @@ export default function SearchBar() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                 Location
               </label>
               <input
                 type="text"
                 placeholder="City, address or ZIP"
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:border-gold-400/50 transition-colors"
+                className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gold-400/50 transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                 Property Type
               </label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
-                <option value="" className="bg-navy-900">
+              <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
+                <option value="" className="bg-white">
                   Any Type
                 </option>
                 {propertyTypes.map((type) => (
                   <option
                     key={type.value}
                     value={type.value}
-                    className="bg-navy-900"
+                    className="bg-white"
                   >
                     {type.label}
                   </option>
@@ -88,15 +88,15 @@ export default function SearchBar() {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                 Budget
               </label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
+              <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
                 {budgets.map((budget) => (
                   <option
                     key={budget.value}
                     value={budget.value}
-                    className="bg-navy-900"
+                    className="bg-white"
                   >
                     {budget.label}
                   </option>
@@ -105,15 +105,15 @@ export default function SearchBar() {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                 Bedrooms
               </label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
+              <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
                 {bedBathOptions.map((opt) => (
                   <option
                     key={opt.value}
                     value={opt.value}
-                    className="bg-navy-900"
+                    className="bg-white"
                   >
                     {opt.label}
                   </option>
@@ -122,15 +122,15 @@ export default function SearchBar() {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                 Bathrooms
               </label>
-              <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
+              <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
                 {bedBathOptions.map((opt) => (
                   <option
                     key={opt.value}
                     value={opt.value}
-                    className="bg-navy-900"
+                    className="bg-white"
                   >
                     {opt.label}
                   </option>

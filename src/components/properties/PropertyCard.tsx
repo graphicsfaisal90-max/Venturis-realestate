@@ -62,7 +62,7 @@ export default function PropertyCard({ property, index = 0 }: PropertyCardProps)
             "absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300",
             isFavorited
               ? "bg-red-500/20 text-red-400"
-              : "bg-black/40 text-white/70 hover:bg-black/60 hover:text-white"
+              : "bg-white/80 text-gray-700 hover:bg-white hover:text-gray-900"
           )}
         >
           <Heart
@@ -77,7 +77,7 @@ export default function PropertyCard({ property, index = 0 }: PropertyCardProps)
           initial={false}
           animate={{ opacity: showOverlay ? 1 : 0 }}
           transition={{ duration: 0.3 }}
-          className="absolute inset-0 bg-black/50 flex items-center justify-center"
+          className="absolute inset-0 bg-gray-900/40 flex items-center justify-center"
         >
           <Link
             href={`/properties/${property.slug}`}
@@ -96,10 +96,10 @@ export default function PropertyCard({ property, index = 0 }: PropertyCardProps)
         <div className="p-5">
           <div className="flex items-start justify-between mb-3">
             <div>
-              <h3 className="text-base font-semibold text-white leading-snug line-clamp-1">
+              <h3 className="text-base font-semibold text-gray-900 leading-snug line-clamp-1">
                 {property.title}
               </h3>
-              <div className="flex items-center gap-1.5 text-xs text-white/40 mt-1">
+              <div className="flex items-center gap-1.5 text-xs text-gray-400 mt-1">
                 <MapPin className="w-3 h-3 flex-shrink-0" />
                 <span className="truncate">
                   {property.location.city}, {property.location.state}
@@ -112,7 +112,7 @@ export default function PropertyCard({ property, index = 0 }: PropertyCardProps)
             <span className="font-num">{formatPrice(property.price, property.currency)}</span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs text-white/50 border-t border-white/5 pt-3">
+          <div className="flex items-center gap-4 text-xs text-gray-500 border-t border-gray-100 pt-3">
             <span className="flex items-center gap-1">
               <Bed className="w-3.5 h-3.5" />
               <span className="font-num">{property.bedrooms}</span> Beds
@@ -131,13 +131,13 @@ export default function PropertyCard({ property, index = 0 }: PropertyCardProps)
             {property.amenities.slice(0, 3).map((amenity: string) => (
               <span
                 key={amenity}
-                className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/40"
+                className="text-[10px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-500"
               >
                 {amenity}
               </span>
             ))}
             {property.amenities.length > 3 && (
-              <span className="text-[10px] px-2 py-0.5 text-white/30">
+              <span className="text-[10px] px-2 py-0.5 text-gray-400">
                 +{property.amenities.length - 3}
               </span>
             )}

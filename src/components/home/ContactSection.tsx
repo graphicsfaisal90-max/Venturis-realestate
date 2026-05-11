@@ -50,7 +50,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="section-padding bg-navy-900/30">
+    <section className="section-padding bg-gray-50">
       <div className="container-luxury">
         <SectionHeading
           title="Get In Touch"
@@ -67,7 +67,7 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+                  <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                     Name
                   </label>
                   <input
@@ -78,11 +78,11 @@ export default function ContactSection() {
                       setFormData({ ...formData, name: e.target.value })
                     }
                     placeholder="Your full name"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-gold-400/50 transition-colors"
+                    className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gold-400/50 transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+                  <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                     Email
                   </label>
                   <input
@@ -93,13 +93,13 @@ export default function ContactSection() {
                       setFormData({ ...formData, email: e.target.value })
                     }
                     placeholder="your@email.com"
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-gold-400/50 transition-colors"
+                    className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gold-400/50 transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+                <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                   Phone
                 </label>
                 <input
@@ -109,12 +109,12 @@ export default function ContactSection() {
                     setFormData({ ...formData, phone: e.target.value })
                   }
                   placeholder="+1 (555) 000-0000"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-gold-400/50 transition-colors"
+                  className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gold-400/50 transition-colors"
                 />
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase tracking-[0.15em] text-white/40 mb-2">
+                <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
                   Message
                 </label>
                 <textarea
@@ -125,7 +125,7 @@ export default function ContactSection() {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   placeholder="Tell us about your requirements..."
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder-white/20 focus:outline-none focus:border-gold-400/50 transition-colors resize-none"
+                  className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gold-400/50 transition-colors resize-none"
                 />
               </div>
 
@@ -149,7 +149,7 @@ export default function ContactSection() {
             className="space-y-6"
           >
             <div className="glass rounded-xl luxury-shadow p-6 md:p-8">
-              <h3 className="text-lg font-semibold text-white mb-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-6">
                 Contact Information
               </h3>
               <div className="space-y-5">
@@ -161,12 +161,12 @@ export default function ContactSection() {
                         <Icon className="w-4 h-4 text-white" />
                       </div>
                       <div>
-                        <div className="text-[10px] uppercase tracking-[0.15em] text-white/40 mb-0.5">
+                        <div className="text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-0.5">
                           {item.label}
                         </div>
                         <a
                           href={item.href}
-                          className="text-sm text-white/70 hover:text-gold-400 transition-colors"
+                          className="text-sm text-gray-600 hover:text-gold-400 transition-colors"
                         >
                           {item.value}
                         </a>
@@ -178,10 +178,10 @@ export default function ContactSection() {
             </div>
 
             <div className="glass rounded-xl luxury-shadow p-6 md:p-8">
-              <h3 className="text-lg font-semibold text-white mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Prefer to Call?
               </h3>
-              <p className="text-sm text-white/50 leading-relaxed mb-4">
+              <p className="text-sm text-gray-500 leading-relaxed mb-4">
                 Our luxury concierge team is available during business hours to
                 assist you with any inquiries.
               </p>

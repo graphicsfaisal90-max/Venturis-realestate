@@ -47,7 +47,7 @@ export default function InvestmentSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-3 left-4">
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-gray-900">
                     {plan.expectedROI}%
                   </div>
                   <div className="text-[10px] uppercase tracking-[0.15em] text-gold-400">
@@ -57,41 +57,41 @@ export default function InvestmentSection() {
               </div>
 
               <div className="p-5">
-                <h3 className="text-base font-semibold text-white mb-2">
+                <h3 className="text-base font-semibold text-gray-900 mb-2">
                   {plan.title}
                 </h3>
-                <p className="text-xs text-white/50 leading-relaxed mb-4 line-clamp-2">
+                <p className="text-xs text-gray-500 leading-relaxed mb-4 line-clamp-2">
                   {plan.description}
                 </p>
 
                 <div className="space-y-2 mb-5">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="flex items-center gap-1.5 text-white/40">
+                    <span className="flex items-center gap-1.5 text-gray-400">
                       <DollarSign className="w-3.5 h-3.5" />
                       Investment Range
                     </span>
-                    <span className="text-white/70 font-num">
+                    <span className="text-gray-700 font-num">
                       {formatPrice(plan.minInvestment)} -{" "}
                       {formatPrice(plan.maxInvestment)}
                     </span>
                   </div>
                   <div className="flex items-center justify-between text-xs">
-                    <span className="flex items-center gap-1.5 text-white/40">
+                    <span className="flex items-center gap-1.5 text-gray-400">
                       <Clock className="w-3.5 h-3.5" />
                       Duration
                     </span>
-                    <span className="text-white/70">{plan.duration}</span>
+                    <span className="text-gray-700">{plan.duration}</span>
                   </div>
                   <div className="flex items-center justify-between text-xs">
-                    <span className="flex items-center gap-1.5 text-white/40">
+                    <span className="flex items-center gap-1.5 text-gray-400">
                       <Shield className="w-3.5 h-3.5" />
                       Risk Level
                     </span>
                     <span
                       className={cn(
                         "px-2 py-0.5 rounded-full text-[10px] font-medium",
-                        riskBgColors[plan.riskLevel] || "bg-white/5",
-                        riskColors[plan.riskLevel] || "text-white/70"
+                        riskBgColors[plan.riskLevel] || "bg-gray-100",
+                        riskColors[plan.riskLevel] || "text-gray-600"
                       )}
                     >
                       {plan.riskLevel}
