@@ -121,7 +121,7 @@ export default function BlogsPage() {
         </div>
         <button
           onClick={openAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-colors text-sm font-medium"
+          className="flex items-center gap-2 px-4 py-2 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] transition-colors text-sm font-medium"
         >
           <Plus size={16} />
           Add Post
@@ -136,7 +136,7 @@ export default function BlogsPage() {
             placeholder="Search posts..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#988060]"
+            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#C8A46B]"
           />
         </div>
       </div>
@@ -176,7 +176,7 @@ export default function BlogsPage() {
                   </td>
                   <td className="px-4 py-4 text-sm text-[#888]">{post.publishedAt}</td>
                   <td className="px-4 py-4">
-                    <span className={`text-sm ${post.isFeatured ? "text-[#988060]" : "text-[#555]"}`}>
+                    <span className={`text-sm ${post.isFeatured ? "text-[#C8A46B]" : "text-[#555]"}`}>
                       {post.isFeatured ? "Yes" : "No"}
                     </span>
                   </td>
@@ -217,7 +217,7 @@ export default function BlogsPage() {
                   type="text"
                   value={form.title}
                   onChange={(e) => setForm((prev) => ({ ...prev, title: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   required
                 />
               </div>
@@ -228,7 +228,7 @@ export default function BlogsPage() {
                     type="text"
                     value={form.slug}
                     onChange={(e) => setForm((prev) => ({ ...prev, slug: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   />
                 </div>
                 <div>
@@ -236,7 +236,7 @@ export default function BlogsPage() {
                   <select
                     value={form.category}
                     onChange={(e) => setForm((prev) => ({ ...prev, category: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   >
                     {blogCategories.map((cat) => (
                       <option key={cat} value={cat}>{cat}</option>
@@ -250,7 +250,7 @@ export default function BlogsPage() {
                   value={form.excerpt}
                   onChange={(e) => setForm((prev) => ({ ...prev, excerpt: e.target.value }))}
                   rows={2}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] resize-none"
                 />
               </div>
               <div>
@@ -259,7 +259,7 @@ export default function BlogsPage() {
                   value={form.content}
                   onChange={(e) => setForm((prev) => ({ ...prev, content: e.target.value }))}
                   rows={6}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] resize-none"
                   required
                 />
               </div>
@@ -270,7 +270,7 @@ export default function BlogsPage() {
                     type="text"
                     value={form.author}
                     onChange={(e) => setForm((prev) => ({ ...prev, author: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   />
                 </div>
                 <div>
@@ -279,7 +279,7 @@ export default function BlogsPage() {
                     type="number"
                     value={form.readTime}
                     onChange={(e) => setForm((prev) => ({ ...prev, readTime: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   />
                 </div>
               </div>
@@ -306,7 +306,7 @@ export default function BlogsPage() {
                   type="text"
                   value={form.tags}
                   onChange={(e) => setForm((prev) => ({ ...prev, tags: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   placeholder="luxury, real-estate, trends"
                 />
               </div>
@@ -317,7 +317,7 @@ export default function BlogsPage() {
                     type="date"
                     value={form.publishedAt}
                     onChange={(e) => setForm((prev) => ({ ...prev, publishedAt: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   />
                 </div>
                 <div className="flex items-end">
@@ -326,7 +326,7 @@ export default function BlogsPage() {
                       type="checkbox"
                       checked={form.isFeatured}
                       onChange={(e) => setForm((prev) => ({ ...prev, isFeatured: e.target.checked }))}
-                      className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#988060] focus:ring-[#988060]"
+                      className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#C8A46B] focus:ring-[#C8A46B]"
                     />
                     <span className="text-sm text-white">Featured Post</span>
                   </label>
@@ -336,7 +336,7 @@ export default function BlogsPage() {
                 <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 rounded-lg border border-[#333] text-[#888] hover:text-white text-sm">
                   Cancel
                 </button>
-                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] text-sm font-medium">
+                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] text-sm font-medium">
                   <Save size={14} />
                   {editingId ? "Update" : "Publish"}
                 </button>

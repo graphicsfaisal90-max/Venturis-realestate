@@ -1,36 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Building2, Users, MessageSquare, Mail, TrendingUp, FileText } from "lucide-react";
+import { Building2, Users, MessageSquare, Mail, TrendingUp, FileText, ArrowUpRight } from "lucide-react";
 
-interface Stats {
-  totalProperties: number;
-  totalAgents: number;
-  totalInquiries: number;
-  totalMessages: number;
-  featuredProperties: number;
-  unreadInquiries: number;
-  unreadMessages: number;
-}
+interface Stats { totalProperties: number; totalAgents: number; totalInquiries: number; totalMessages: number; featuredProperties: number; unreadInquiries: number; unreadMessages: number; }
 
 export default function AdminDashboard() {
-  const [stats, setStats] = useState<Stats>({
-    totalProperties: 6,
-    totalAgents: 6,
-    totalInquiries: 12,
-    totalMessages: 8,
-    featuredProperties: 4,
-    unreadInquiries: 3,
-    unreadMessages: 2,
+  const [stats] = useState<Stats>({
+    totalProperties: 6, totalAgents: 6, totalInquiries: 12, totalMessages: 8,
+    featuredProperties: 4, unreadInquiries: 3, unreadMessages: 2,
   });
 
   const statCards = [
-    { label: "Total Properties", value: stats.totalProperties, icon: Building2, color: "text-blue-400", bg: "bg-blue-400/10" },
-    { label: "Total Agents", value: stats.totalAgents, icon: Users, color: "text-green-400", bg: "bg-green-400/10" },
-    { label: "Inquiries", value: stats.totalInquiries, icon: MessageSquare, color: "text-yellow-400", bg: "bg-yellow-400/10" },
-    { label: "Messages", value: stats.totalMessages, icon: Mail, color: "text-purple-400", bg: "bg-purple-400/10" },
-    { label: "Featured Properties", value: stats.featuredProperties, icon: TrendingUp, color: "text-[#988060]", bg: "bg-[#988060]/10" },
+    { label: "Total Properties", value: stats.totalProperties, icon: Building2, growth: "+2 this month" },
+    { label: "Total Agents", value: stats.totalAgents, icon: Users, growth: "+1 this month" },
+    { label: "Inquiries", value: stats.totalInquiries, icon: MessageSquare, growth: "+5 this month" },
+    { label: "Messages", value: stats.totalMessages, icon: Mail, growth: "+3 this month" },
+    { label: "Featured", value: stats.featuredProperties, icon: TrendingUp, growth: "80% of all" },
   ];
 
   const recentInquiries = [
@@ -41,82 +28,82 @@ export default function AdminDashboard() {
   ];
 
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-white">Dashboard</h1>
-        <p className="text-[#888] mt-1">Overview of your real estate platform</p>
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-3xl font-bold text-white font-heading">Dashboard</h1>
+        <p className="text-[#7D8590] mt-1 text-sm">Overview of your real estate platform</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {statCards.map((card) => {
           const Icon = card.icon;
           return (
-            <div key={card.label} className="glass rounded-xl p-5">
-              <div className={`w-10 h-10 rounded-lg ${card.bg} flex items-center justify-center mb-3`}>
-                <Icon size={20} className={card.color} />
+            <div key={card.label} className="group relative bg-[#17191C] rounded-2xl border border-[#ffffff0a] p-5 hover:border-[#C8A46B]/20 transition-all duration-300 hover:shadow-lg hover:shadow-[#C8A46B]/5">
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-11 h-11 rounded-xl bg-[#C8A46B]/10 flex items-center justify-center group-hover:bg-[#C8A46B]/20 transition-colors">
+                  <Icon size={20} className="text-[#C8A46B]" />
+                </div>
+                <span className="text-[10px] text-emerald-400/80 bg-emerald-400/5 px-2 py-0.5 rounded-full border border-emerald-400/10 flex items-center gap-1">
+                  <ArrowUpRight size={10} />
+                  {card.growth}
+                </span>
               </div>
-              <p className="text-2xl font-bold text-white">{card.value}</p>
-              <p className="text-sm text-[#888] mt-1">{card.label}</p>
+              <p className="text-3xl font-bold text-white font-num">{card.value}</p>
+              <p className="text-xs text-[#7D8590] mt-1">{card.label}</p>
             </div>
           );
         })}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="glass rounded-xl p-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Recent Inquiries</h2>
-          <div className="space-y-3">
+        <div className="bg-[#17191C] rounded-2xl border border-[#ffffff0a] p-6">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-lg font-semibold text-white font-heading">Recent Inquiries</h2>
+            <span className="text-[10px] text-[#7D8590] bg-[#ffffff08] px-2 py-1 rounded-full">Today</span>
+          </div>
+          <div className="space-y-1">
             {recentInquiries.map((inq) => (
-              <div key={inq.id} className="flex items-center justify-between py-2 border-b border-[#222] last:border-0">
-                <div>
-                  <p className="text-sm font-medium text-white">{inq.name}</p>
-                  <p className="text-xs text-[#666]">{inq.property}</p>
+              <div key={inq.id} className="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-[#ffffff08] transition-colors -mx-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#C8A46B]/10 flex items-center justify-center text-xs text-[#C8A46B] font-medium">
+                    {inq.name.charAt(0)}
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-white">{inq.name}</p>
+                    <p className="text-xs text-[#7D8590]">{inq.property}</p>
+                  </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-xs text-[#888]">{inq.email}</p>
-                  <p className="text-xs text-[#555]">{inq.date}</p>
-                </div>
+                <span className="text-[11px] text-[#7D8590]">{inq.date}</span>
               </div>
             ))}
           </div>
-          <Link
-            href="/admin/inquiries"
-            className="inline-block mt-4 text-sm text-[#988060] hover:text-[#9D8653] transition-colors"
-          >
-            View all inquiries →
+          <Link href="/admin/inquiries" className="inline-flex items-center gap-1.5 mt-4 text-sm text-[#C8A46B] hover:text-[#D6B98C] transition-colors">
+            View all inquiries <ArrowUpRight size={14} />
           </Link>
         </div>
 
-        <div className="glass rounded-xl p-6">
-          <h2 className="text-lg font-semibold text-white mb-4">Quick Actions</h2>
+        <div className="bg-[#17191C] rounded-2xl border border-[#ffffff0a] p-6">
+          <h2 className="text-lg font-semibold text-white font-heading mb-6">Quick Actions</h2>
           <div className="grid grid-cols-2 gap-3">
-            <Link
-              href="/admin/properties/new"
-              className="p-4 rounded-lg bg-[#988060]/10 border border-[#988060]/20 hover:bg-[#988060]/20 transition-colors text-center"
-            >
-              <Building2 size={20} className="mx-auto mb-2 text-[#988060]" />
-              <span className="text-sm text-white">Add Property</span>
+            <Link href="/admin/properties/new" className="group p-5 rounded-xl bg-[#C8A46B]/5 border border-[#C8A46B]/15 hover:bg-[#C8A46B]/10 hover:border-[#C8A46B]/30 transition-all">
+              <Building2 size={22} className="text-[#C8A46B] mb-3 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-white block">Add Property</span>
+              <span className="text-[10px] text-[#7D8590] mt-1 block">New listing</span>
             </Link>
-            <Link
-              href="/admin/properties"
-              className="p-4 rounded-lg bg-[#1a1a1a] border border-[#222] hover:bg-[#222] transition-colors text-center"
-            >
-              <Building2 size={20} className="mx-auto mb-2 text-[#888]" />
-              <span className="text-sm text-white">Manage Properties</span>
+            <Link href="/admin/properties" className="group p-5 rounded-xl bg-[#ffffff05] border border-[#ffffff0a] hover:bg-[#ffffff0a] hover:border-[#ffffff15] transition-all">
+              <Building2 size={22} className="text-[#B8BDC7] mb-3 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-white block">Manage Properties</span>
+              <span className="text-[10px] text-[#7D8590] mt-1 block">Edit listings</span>
             </Link>
-            <Link
-              href="/admin/blogs"
-              className="p-4 rounded-lg bg-[#1a1a1a] border border-[#222] hover:bg-[#222] transition-colors text-center"
-            >
-              <FileText size={20} className="mx-auto mb-2 text-[#888]" />
-              <span className="text-sm text-white">Manage Blogs</span>
+            <Link href="/admin/blogs" className="group p-5 rounded-xl bg-[#ffffff05] border border-[#ffffff0a] hover:bg-[#ffffff0a] hover:border-[#ffffff15] transition-all">
+              <FileText size={22} className="text-[#B8BDC7] mb-3 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-white block">Manage Blogs</span>
+              <span className="text-[10px] text-[#7D8590] mt-1 block">Content</span>
             </Link>
-            <Link
-              href="/admin/agents"
-              className="p-4 rounded-lg bg-[#1a1a1a] border border-[#222] hover:bg-[#222] transition-colors text-center"
-            >
-              <Users size={20} className="mx-auto mb-2 text-[#888]" />
-              <span className="text-sm text-white">Manage Agents</span>
+            <Link href="/admin/agents" className="group p-5 rounded-xl bg-[#ffffff05] border border-[#ffffff0a] hover:bg-[#ffffff0a] hover:border-[#ffffff15] transition-all">
+              <Users size={22} className="text-[#B8BDC7] mb-3 group-hover:scale-110 transition-transform" />
+              <span className="text-sm font-medium text-white block">Manage Agents</span>
+              <span className="text-[10px] text-[#7D8590] mt-1 block">Team</span>
             </Link>
           </div>
         </div>

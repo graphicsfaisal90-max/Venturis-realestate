@@ -49,8 +49,8 @@ export default function SettingsPage() {
       <form onSubmit={handleSubmit} className="space-y-6 max-w-3xl">
         <div className="glass rounded-xl p-6 space-y-4">
           <h2 className="text-lg font-semibold text-white flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-[#988060]/10 flex items-center justify-center">
-              <Settings size={14} className="text-[#988060]" />
+            <div className="w-6 h-6 rounded-lg bg-[#C8A46B]/10 flex items-center justify-center">
+              <Settings size={14} className="text-[#C8A46B]" />
             </div>
             Branding
           </h2>
@@ -70,7 +70,7 @@ export default function SettingsPage() {
                 type="text"
                 value={form.siteName}
                 onChange={(e) => update("siteName", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
               />
             </div>
             <div>
@@ -79,7 +79,7 @@ export default function SettingsPage() {
                 type="text"
                 value={form.tagline}
                 onChange={(e) => update("tagline", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
               />
             </div>
             <div className="md:col-span-2">
@@ -88,7 +88,7 @@ export default function SettingsPage() {
                 value={form.description}
                 onChange={(e) => update("description", e.target.value)}
                 rows={3}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] resize-none transition-colors"
               />
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function SettingsPage() {
                 type="email"
                 value={form.email}
                 onChange={(e) => update("email", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
               />
             </div>
             <div>
@@ -112,7 +112,7 @@ export default function SettingsPage() {
                 type="text"
                 value={form.phone}
                 onChange={(e) => update("phone", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
               />
             </div>
             <div>
@@ -121,7 +121,7 @@ export default function SettingsPage() {
                 type="text"
                 value={form.whatsapp}
                 onChange={(e) => update("whatsapp", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
               />
             </div>
             <div>
@@ -130,7 +130,7 @@ export default function SettingsPage() {
                 type="text"
                 value={form.officeHours}
                 onChange={(e) => update("officeHours", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
               />
             </div>
             <div className="md:col-span-2">
@@ -139,7 +139,7 @@ export default function SettingsPage() {
                 type="text"
                 value={form.address}
                 onChange={(e) => update("address", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
               />
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function SettingsPage() {
                 type="text"
                 value={form.metaTitle}
                 onChange={(e) => update("metaTitle", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
               />
             </div>
             <div>
@@ -163,7 +163,7 @@ export default function SettingsPage() {
                 value={form.metaDescription}
                 onChange={(e) => update("metaDescription", e.target.value)}
                 rows={3}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] resize-none transition-colors"
               />
             </div>
             <div>
@@ -172,7 +172,7 @@ export default function SettingsPage() {
                 type="text"
                 value={form.metaKeywords}
                 onChange={(e) => update("metaKeywords", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
                 placeholder="luxury real estate, premium properties, ..."
               />
             </div>
@@ -189,7 +189,7 @@ export default function SettingsPage() {
                   type="url"
                   value={form[platform as keyof typeof form] as string}
                   onChange={(e) => update(platform, e.target.value)}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] transition-colors"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] transition-colors"
                 />
               </div>
             ))}
@@ -200,7 +200,7 @@ export default function SettingsPage() {
           <button
             type="submit"
             disabled={saving}
-            className="flex items-center gap-2 px-8 py-2.5 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-all text-sm font-medium disabled:opacity-50 shadow-lg shadow-[#988060]/20"
+            className="flex items-center gap-2 px-8 py-2.5 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] transition-all text-sm font-medium disabled:opacity-50 shadow-lg shadow-[#C8A46B]/20"
           >
             <Save size={16} />
             {saving ? "Saving..." : "Save Settings"}

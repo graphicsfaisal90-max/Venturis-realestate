@@ -33,7 +33,7 @@ export default function FeaturedProperties() {
         >
           <Link
             href="/properties"
-            className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 font-medium text-sm tracking-wide transition-colors group"
+            className="inline-flex items-center gap-2 text-[#C8A46B] hover:text-[#D6B98C] font-medium text-sm tracking-wide transition-colors group"
           >
             View All Properties
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

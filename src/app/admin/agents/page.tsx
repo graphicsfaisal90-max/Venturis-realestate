@@ -120,7 +120,7 @@ export default function AgentsPage() {
         </div>
         <button
           onClick={openAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-colors text-sm font-medium"
+          className="flex items-center gap-2 px-4 py-2 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] transition-colors text-sm font-medium"
         >
           <Plus size={16} />
           Add Agent
@@ -135,7 +135,7 @@ export default function AgentsPage() {
             placeholder="Search agents..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#988060]"
+            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#C8A46B]"
           />
         </div>
       </div>
@@ -163,7 +163,7 @@ export default function AgentsPage() {
             <p className="text-xs text-[#666] line-clamp-2 mb-3">{agent.bio}</p>
             <div className="flex items-center justify-between text-xs text-[#888]">
               <span>★ {agent.rating} ({agent.reviewCount} reviews)</span>
-              {agent.isFeatured && <span className="text-[#988060]">Featured</span>}
+              {agent.isFeatured && <span className="text-[#C8A46B]">Featured</span>}
             </div>
           </div>
         ))}
@@ -190,7 +190,7 @@ export default function AgentsPage() {
                   type="text"
                   value={form.name}
                   onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   required
                 />
               </div>
@@ -200,7 +200,7 @@ export default function AgentsPage() {
                   type="text"
                   value={form.title}
                   onChange={(e) => setForm((prev) => ({ ...prev, title: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 />
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -210,7 +210,7 @@ export default function AgentsPage() {
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   />
                 </div>
                 <div>
@@ -219,7 +219,7 @@ export default function AgentsPage() {
                     type="text"
                     value={form.phone}
                     onChange={(e) => setForm((prev) => ({ ...prev, phone: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   />
                 </div>
               </div>
@@ -239,7 +239,7 @@ export default function AgentsPage() {
                   value={form.bio}
                   onChange={(e) => setForm((prev) => ({ ...prev, bio: e.target.value }))}
                   rows={3}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] resize-none"
                 />
               </div>
               <div>
@@ -248,7 +248,7 @@ export default function AgentsPage() {
                   type="text"
                   value={form.specialties}
                   onChange={(e) => setForm((prev) => ({ ...prev, specialties: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 />
               </div>
               <div className="flex items-center gap-4">
@@ -261,7 +261,7 @@ export default function AgentsPage() {
                     max="5"
                     value={form.rating}
                     onChange={(e) => setForm((prev) => ({ ...prev, rating: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   />
                 </div>
                 <label className="flex items-center gap-2 cursor-pointer pt-5">
@@ -269,7 +269,7 @@ export default function AgentsPage() {
                     type="checkbox"
                     checked={form.isFeatured}
                     onChange={(e) => setForm((prev) => ({ ...prev, isFeatured: e.target.checked }))}
-                    className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#988060] focus:ring-[#988060]"
+                    className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#C8A46B] focus:ring-[#C8A46B]"
                   />
                   <span className="text-sm text-white">Featured</span>
                 </label>
@@ -278,7 +278,7 @@ export default function AgentsPage() {
                 <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 rounded-lg border border-[#333] text-[#888] hover:text-white text-sm">
                   Cancel
                 </button>
-                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] text-sm font-medium">
+                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] text-sm font-medium">
                   <Save size={14} />
                   {editingId ? "Update" : "Save"}
                 </button>

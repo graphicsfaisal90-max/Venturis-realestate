@@ -47,7 +47,7 @@ export default function MessagesPage() {
             placeholder="Search messages..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#b8942e]"
+            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#C8A46B]"
           />
         </div>
       </div>
@@ -57,7 +57,7 @@ export default function MessagesPage() {
           <div
             key={msg.id}
             className={`border-b border-[#222] last:border-0 p-4 cursor-pointer hover:bg-[#1a1a1a] transition-colors ${
-              !msg.isRead ? "bg-[#b8942e]/5" : ""
+              !msg.isRead ? "bg-[#C8A46B]/5" : ""
             }`}
             onClick={() => setSelected(msg)}
           >
@@ -65,11 +65,11 @@ export default function MessagesPage() {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
                   {!msg.isRead && (
-                    <span className="w-2 h-2 rounded-full bg-[#b8942e] flex-shrink-0" />
+                    <span className="w-2 h-2 rounded-full bg-[#C8A46B] flex-shrink-0" />
                   )}
                   <p className="text-sm font-medium text-white truncate">{msg.name}</p>
                 </div>
-                <p className="text-xs text-[#b8942e] mb-1">{msg.subject}</p>
+                <p className="text-xs text-[#C8A46B] mb-1">{msg.subject}</p>
                 <p className="text-xs text-[#666] line-clamp-2">{msg.message}</p>
               </div>
               <div className="flex items-center gap-2 flex-shrink-0">
@@ -80,7 +80,7 @@ export default function MessagesPage() {
                     toggleRead(msg.id);
                   }}
                   className={`p-1.5 rounded-lg transition-colors ${
-                    msg.isRead ? "text-[#555] hover:text-[#888]" : "text-[#b8942e] hover:text-[#d4a843]"
+                    msg.isRead ? "text-[#555] hover:text-[#888]" : "text-[#C8A46B] hover:text-[#D6B98C]"
                   }`}
                 >
                   <Mail size={14} />
@@ -105,7 +105,7 @@ export default function MessagesPage() {
             <div className="space-y-3">
               <div>
                 <p className="text-xs text-[#888]">Subject</p>
-                <p className="text-sm text-[#b8942e] font-medium">{selected.subject}</p>
+                <p className="text-sm text-[#C8A46B] font-medium">{selected.subject}</p>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
@@ -119,7 +119,7 @@ export default function MessagesPage() {
               </div>
               <div>
                 <p className="text-xs text-[#888]">Email</p>
-                <a href={`mailto:${selected.email}`} className="text-sm text-[#b8942e] hover:text-[#d4a843]">
+                <a href={`mailto:${selected.email}`} className="text-sm text-[#C8A46B] hover:text-[#D6B98C]">
                   {selected.email}
                 </a>
               </div>
@@ -141,7 +141,7 @@ export default function MessagesPage() {
                 className={`px-4 py-2 rounded-lg text-sm transition-colors ${
                   selected.isRead
                     ? "border border-[#333] text-[#888] hover:text-white"
-                    : "bg-[#b8942e] text-black hover:bg-[#d4a843]"
+                    : "bg-[#C8A46B] text-black hover:bg-[#D6B98C]"
                 }`}
               >
                 {selected.isRead ? "Mark as Unread" : "Mark as Read"}

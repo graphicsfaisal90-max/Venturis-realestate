@@ -99,7 +99,7 @@ export default function Hero() {
               onClick={() => setCurrent(i)}
               className={`h-1.5 rounded-full transition-all duration-500 ${
                 i === current
-                  ? "w-8 bg-gradient-to-r from-[#988060] to-[#9D8653]"
+                  ? "w-8 bg-gradient-to-r from-[#C8A46B] to-[#D6B98C]"
                   : "w-1.5 bg-white/30 hover:bg-white/50"
               }`}
               aria-label={`Go to slide ${i + 1}`}
@@ -173,7 +173,7 @@ export default function Hero() {
         >
           <Link
             href="/properties"
-            className="gold-gradient-bg text-white px-8 py-4 rounded-lg font-medium text-base tracking-wide hover:opacity-90 hover:shadow-[0_0_30px_rgba(152,128,96,0.3)] transition-all duration-300 active:scale-[0.97]"
+            className="gold-gradient-bg text-white px-8 py-4 rounded-lg font-medium text-base tracking-wide hover:opacity-90 hover:shadow-[0_0_30px_rgba(200,164,107,0.3)] transition-all duration-300 active:scale-[0.97]"
           >
             Explore Properties
           </Link>
@@ -209,9 +209,9 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="absolute bottom-0 left-0 right-0 z-10"
       >
-        <div className="bg-white/90 backdrop-blur-md border-t border-gray-200">
+        <div className="bg-[#0B0B0C]/80 backdrop-blur-2xl border-t border-[#ffffff0a]">
           <div className="container-luxury">
-            <div className="grid grid-cols-3 divide-x divide-gray-200 py-5">
+            <div className="grid grid-cols-3 divide-x divide-[#ffffff0a] py-5">
               {stats.slice(0, 3).map((stat, i) => (
                 <motion.div
                   key={stat.label}
@@ -223,7 +223,7 @@ export default function Hero() {
                   <div className="text-xl md:text-2xl font-bold gold-gradient font-num">
                     {stat.value}
                   </div>
-                  <div className="text-[11px] uppercase tracking-[0.15em] text-gray-500 mt-1">
+                  <div className="text-[11px] uppercase tracking-[0.15em] text-[#7D8590] mt-1">
                     {stat.label}
                   </div>
                 </motion.div>

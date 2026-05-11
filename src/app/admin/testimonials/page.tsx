@@ -92,7 +92,7 @@ export default function TestimonialsPage() {
         </div>
         <button
           onClick={openAdd}
-          className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-colors text-sm font-medium"
+          className="flex items-center gap-2 px-4 py-2 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] transition-colors text-sm font-medium"
         >
           <Plus size={16} />
           Add Testimonial
@@ -107,7 +107,7 @@ export default function TestimonialsPage() {
             placeholder="Search testimonials..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#988060]"
+            className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#C8A46B]"
           />
         </div>
       </div>
@@ -141,13 +141,13 @@ export default function TestimonialsPage() {
                   <Star
                     key={i}
                     size={12}
-                    className={i < t.rating ? "text-[#988060] fill-[#988060]" : "text-[#333]"}
+                    className={i < t.rating ? "text-[#C8A46B] fill-[#C8A46B]" : "text-[#333]"}
                   />
                 ))}
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#888]">{t.propertyType}</span>
-                {t.isFeatured && <span className="text-[#988060]">Featured</span>}
+                {t.isFeatured && <span className="text-[#C8A46B]">Featured</span>}
               </div>
             </div>
           </div>
@@ -175,7 +175,7 @@ export default function TestimonialsPage() {
                   type="text"
                   value={form.clientName}
                   onChange={(e) => setForm((prev) => ({ ...prev, clientName: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   required
                 />
               </div>
@@ -185,7 +185,7 @@ export default function TestimonialsPage() {
                   type="text"
                   value={form.clientTitle}
                   onChange={(e) => setForm((prev) => ({ ...prev, clientTitle: e.target.value }))}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   placeholder="e.g. Luxury Villa Buyer, Beverly Hills"
                 />
               </div>
@@ -200,7 +200,7 @@ export default function TestimonialsPage() {
                   value={form.content}
                   onChange={(e) => setForm((prev) => ({ ...prev, content: e.target.value }))}
                   rows={4}
-                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
+                  className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] resize-none"
                   required
                 />
               </div>
@@ -210,7 +210,7 @@ export default function TestimonialsPage() {
                   <select
                     value={form.rating}
                     onChange={(e) => setForm((prev) => ({ ...prev, rating: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                   >
                     {[5, 4, 3, 2, 1].map((r) => (
                       <option key={r} value={r}>{r} Star{r > 1 ? "s" : ""}</option>
@@ -223,7 +223,7 @@ export default function TestimonialsPage() {
                     type="text"
                     value={form.propertyType}
                     onChange={(e) => setForm((prev) => ({ ...prev, propertyType: e.target.value }))}
-                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                    className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                     placeholder="e.g. Villa, Penthouse"
                   />
                 </div>
@@ -233,7 +233,7 @@ export default function TestimonialsPage() {
                   type="checkbox"
                   checked={form.isFeatured}
                   onChange={(e) => setForm((prev) => ({ ...prev, isFeatured: e.target.checked }))}
-                  className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#988060] focus:ring-[#988060]"
+                  className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#C8A46B] focus:ring-[#C8A46B]"
                 />
                 <span className="text-sm text-white">Featured Testimonial</span>
               </label>
@@ -241,7 +241,7 @@ export default function TestimonialsPage() {
                 <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 rounded-lg border border-[#333] text-[#888] hover:text-white text-sm">
                   Cancel
                 </button>
-                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] text-sm font-medium">
+                <button type="submit" className="flex items-center gap-2 px-4 py-2 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] text-sm font-medium">
                   <Save size={14} />
                   {editingId ? "Update" : "Save"}
                 </button>

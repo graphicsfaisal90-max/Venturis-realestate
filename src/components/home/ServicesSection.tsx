@@ -28,7 +28,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function ServicesSection() {
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-[#111315]">
       <div className="container-luxury">
         <SectionHeading
           title="Our Services"
@@ -45,10 +45,10 @@ export default function ServicesSection() {
                   <div className="w-12 h-12 rounded-xl gold-gradient-bg flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-base font-semibold text-gray-900 mb-2">
+                  <h3 className="text-base font-semibold text-white mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                  <p className="text-sm text-[#7D8590] leading-relaxed">
                     {service.description}
                   </p>
                 </div>

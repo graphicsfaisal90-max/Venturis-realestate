@@ -154,7 +154,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={form.title}
                 onChange={(e) => handleTitleChange(e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 required
               />
             </div>
@@ -164,7 +164,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={form.slug}
                 onChange={(e) => update("slug", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 required
               />
             </div>
@@ -174,7 +174,7 @@ export default function NewPropertyPage() {
                 value={form.description}
                 onChange={(e) => update("description", e.target.value)}
                 rows={4}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060] resize-none"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B] resize-none"
                 required
               />
             </div>
@@ -184,7 +184,7 @@ export default function NewPropertyPage() {
                 type="number"
                 value={form.price}
                 onChange={(e) => update("price", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 required
               />
             </div>
@@ -193,7 +193,7 @@ export default function NewPropertyPage() {
               <select
                 value={form.currency}
                 onChange={(e) => update("currency", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               >
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
@@ -206,7 +206,7 @@ export default function NewPropertyPage() {
               <select
                 value={form.type}
                 onChange={(e) => update("type", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               >
                 {propertyTypes.map((t) => (
                   <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
@@ -218,7 +218,7 @@ export default function NewPropertyPage() {
               <select
                 value={form.purpose}
                 onChange={(e) => update("purpose", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               >
                 {purposes.map((p) => (
                   <option key={p} value={p}>{p.charAt(0).toUpperCase() + p.slice(1)}</option>
@@ -230,7 +230,7 @@ export default function NewPropertyPage() {
               <select
                 value={form.status}
                 onChange={(e) => update("status", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               >
                 {statuses.map((s) => (
                   <option key={s} value={s}>{s.replace("_", " ").replace(/\b\w/g, (c) => c.toUpperCase())}</option>
@@ -243,7 +243,7 @@ export default function NewPropertyPage() {
                 type="number"
                 value={form.bedrooms}
                 onChange={(e) => update("bedrooms", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 required
               />
             </div>
@@ -254,7 +254,7 @@ export default function NewPropertyPage() {
                 step="0.5"
                 value={form.bathrooms}
                 onChange={(e) => update("bathrooms", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 required
               />
             </div>
@@ -264,7 +264,7 @@ export default function NewPropertyPage() {
                 type="number"
                 value={form.area}
                 onChange={(e) => update("area", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 required
               />
             </div>
@@ -273,7 +273,7 @@ export default function NewPropertyPage() {
               <select
                 value={form.areaUnit}
                 onChange={(e) => update("areaUnit", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               >
                 <option value="sqft">Sq Ft</option>
                 <option value="sqm">Sq Meters</option>
@@ -286,7 +286,7 @@ export default function NewPropertyPage() {
                 type="number"
                 value={form.yearBuilt}
                 onChange={(e) => update("yearBuilt", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               />
             </div>
           </div>
@@ -301,7 +301,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={form.address}
                 onChange={(e) => update("address", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               />
             </div>
             <div>
@@ -310,7 +310,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={form.city}
                 onChange={(e) => update("city", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               />
             </div>
             <div>
@@ -319,7 +319,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={form.state}
                 onChange={(e) => update("state", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               />
             </div>
             <div>
@@ -328,7 +328,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={form.country}
                 onChange={(e) => update("country", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               />
             </div>
             <div>
@@ -337,7 +337,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={form.zipCode}
                 onChange={(e) => update("zipCode", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               />
             </div>
             <div>
@@ -347,7 +347,7 @@ export default function NewPropertyPage() {
                 step="any"
                 value={form.lat}
                 onChange={(e) => update("lat", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               />
             </div>
             <div>
@@ -357,7 +357,7 @@ export default function NewPropertyPage() {
                 step="any"
                 value={form.lng}
                 onChange={(e) => update("lng", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
               />
             </div>
           </div>
@@ -387,7 +387,7 @@ export default function NewPropertyPage() {
                 onClick={() => toggleAmenity(amenity)}
                 className={`px-3 py-1.5 rounded-lg text-xs border transition-colors ${
                   form.amenities.includes(amenity)
-                    ? "bg-[#988060]/20 border-[#988060]/40 text-[#988060]"
+                    ? "bg-[#C8A46B]/20 border-[#C8A46B]/40 text-[#C8A46B]"
                     : "bg-[#1a1a1a] border-[#333] text-[#888] hover:border-[#555]"
                 }`}
               >
@@ -405,7 +405,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={feature}
                 onChange={(e) => updateFeature(i, e.target.value)}
-                className="flex-1 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="flex-1 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 placeholder="e.g. Ocean views from every room"
               />
               {form.features.length > 1 && (
@@ -413,7 +413,7 @@ export default function NewPropertyPage() {
               )}
             </div>
           ))}
-          <button type="button" onClick={addFeature} className="text-sm text-[#988060] hover:text-[#9D8653]">
+          <button type="button" onClick={addFeature} className="text-sm text-[#C8A46B] hover:text-[#D6B98C]">
             + Add Feature
           </button>
         </div>
@@ -426,27 +426,27 @@ export default function NewPropertyPage() {
                 type="text"
                 value={place.name}
                 onChange={(e) => updateNearbyPlace(i, "name", e.target.value)}
-                className="flex-1 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="flex-1 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 placeholder="Name"
               />
               <input
                 type="text"
                 value={place.distance}
                 onChange={(e) => updateNearbyPlace(i, "distance", e.target.value)}
-                className="w-24 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-24 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 placeholder="0.5 mi"
               />
               <input
                 type="text"
                 value={place.type}
                 onChange={(e) => updateNearbyPlace(i, "type", e.target.value)}
-                className="w-28 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-28 bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 placeholder="type"
               />
               <button type="button" onClick={() => removeNearbyPlace(i)} className="text-red-400 hover:text-red-300 text-xs">Remove</button>
             </div>
           ))}
-          <button type="button" onClick={addNearbyPlace} className="text-sm text-[#988060] hover:text-[#9D8653]">
+          <button type="button" onClick={addNearbyPlace} className="text-sm text-[#C8A46B] hover:text-[#D6B98C]">
             + Add Nearby Place
           </button>
         </div>
@@ -460,7 +460,7 @@ export default function NewPropertyPage() {
                 type="text"
                 value={form.tags}
                 onChange={(e) => update("tags", e.target.value)}
-                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#988060]"
+                className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-[#C8A46B]"
                 placeholder="luxury, beachfront, pool"
               />
             </div>
@@ -470,7 +470,7 @@ export default function NewPropertyPage() {
                   type="checkbox"
                   checked={form.isFeatured}
                   onChange={(e) => update("isFeatured", e.target.checked)}
-                  className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#988060] focus:ring-[#988060]"
+                  className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#C8A46B] focus:ring-[#C8A46B]"
                 />
                 <span className="text-sm text-white">Featured Property</span>
               </label>
@@ -479,7 +479,7 @@ export default function NewPropertyPage() {
                   type="checkbox"
                   checked={form.isLuxury}
                   onChange={(e) => update("isLuxury", e.target.checked)}
-                  className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#988060] focus:ring-[#988060]"
+                  className="w-4 h-4 rounded border-[#333] bg-[#1a1a1a] text-[#C8A46B] focus:ring-[#C8A46B]"
                 />
                 <span className="text-sm text-white">Luxury Property</span>
               </label>
@@ -497,7 +497,7 @@ export default function NewPropertyPage() {
           <button
             type="submit"
             disabled={saving}
-            className="flex items-center gap-2 px-6 py-2.5 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-colors text-sm font-medium disabled:opacity-50"
+            className="flex items-center gap-2 px-6 py-2.5 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] transition-colors text-sm font-medium disabled:opacity-50"
           >
             <Save size={16} />
             {saving ? "Saving..." : "Create Property"}

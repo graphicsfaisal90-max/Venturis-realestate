@@ -3,9 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Heart, ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useStore } from "@/store/useStore";
-import { siteConfig } from "@/lib/constants";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -27,23 +26,6 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-function MenuToggle({ open }: { open: boolean }) {
-  return (
-    <div className="relative w-6 h-6 flex items-center justify-center">
-      <span
-        className={`absolute h-[2px] w-5 rounded-full bg-[#1a1a1a] transition-all duration-300 ${
-          open ? "rotate-45 translate-y-0" : "-translate-y-1.5"
-        }`}
-      />
-      <span
-        className={`absolute h-[2px] w-5 rounded-full bg-[#1a1a1a] transition-all duration-300 ${
-          open ? "-rotate-45 translate-y-0" : "translate-y-1.5"
-        }`}
-      />
-    </div>
-  );
-}
-
 function MobileSubmenu({
   link,
   onClose,
@@ -57,14 +39,10 @@ function MobileSubmenu({
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between w-full px-4 py-3 text-[#555] hover:text-[#1a1a1a] hover:bg-gray-100 rounded-lg transition-all text-sm"
+        className="flex items-center justify-between w-full px-4 py-3 text-[#7D8590] hover:text-white hover:bg-[#ffffff08] rounded-xl transition-all text-sm"
       >
         {link.label}
-        <ChevronDown
-          className={`w-3.5 h-3.5 transition-transform duration-300 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
+        <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
       </button>
       <AnimatePresence>
         {open && (
@@ -75,12 +53,12 @@ function MobileSubmenu({
             transition={{ duration: 0.2 }}
             className="overflow-hidden"
           >
-            <div className="ml-4 border-l border-gray-200 pl-3 space-y-1 py-1">
+            <div className="ml-4 border-l border-[#ffffff0a] pl-3 space-y-1 py-1">
               {link.submenu.map((sub) => (
                 <Link
                   key={sub.href}
                   href={sub.href}
-                  className="block px-4 py-2.5 text-[#777] hover:text-[#1a1a1a] hover:bg-gray-50 rounded-lg transition-all text-sm"
+                  className="block px-4 py-2.5 text-[#7D8590] hover:text-white hover:bg-[#ffffff08] rounded-xl transition-all text-sm"
                   onClick={onClose}
                 >
                   {sub.label}
@@ -97,7 +75,7 @@ function MobileSubmenu({
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
-  const { isMobileMenuOpen, setMobileMenuOpen, savedProperties } = useStore();
+  const { isMobileMenuOpen, setMobileMenuOpen } = useStore();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -109,14 +87,14 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-xl border-b border-gray-200 shadow-sm"
+          ? "bg-[#0B0B0C]/80 backdrop-blur-2xl border-b border-[#ffffff0a] shadow-lg shadow-black/20"
           : "bg-transparent"
       }`}
     >
       <div className="container-luxury">
         <div className="flex items-center justify-between h-20 md:h-24">
           <Link href="/" className="relative z-10">
-            <img src="/images/logo.png" alt="Venturis Realtors" className="h-10 md:h-12 w-auto" />
+            <img src="/images/logo.png" alt="Venturis Realtors" className="h-10 md:h-12 w-auto brightness-0 invert" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
@@ -129,13 +107,11 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  className="group relative flex items-center gap-1 px-4 py-2 text-sm text-[#555] hover:text-[#988060] transition-colors duration-300 rounded-lg hover:bg-[#988060]/5"
+                  className="group relative flex items-center gap-1 px-4 py-2 text-sm text-[#B8BDC7] hover:text-white transition-colors duration-300 rounded-xl hover:bg-[#ffffff08]"
                 >
                   {link.label}
-                  {link.submenu && (
-                    <ChevronDown className="w-3 h-3" />
-                  )}
-                  <span className="absolute inset-x-4 -bottom-0 h-[2px] bg-gradient-to-r from-[#988060] to-[#9D8653] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
+                  {link.submenu && <ChevronDown className="w-3 h-3" />}
+                  <span className="absolute inset-x-4 -bottom-0 h-[2px] bg-gradient-to-r from-[#C8A46B] to-[#D6B98C] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
                 </Link>
                 {link.submenu && openSubmenu === link.label && (
                   <motion.div
@@ -143,16 +119,16 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl p-2 luxury-shadow border border-gray-100"
+                    className="absolute top-full left-0 mt-1 w-56 bg-[#111315] rounded-2xl p-2 luxury-shadow border border-[#ffffff0a] backdrop-blur-2xl"
                   >
                     {link.submenu.map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="group flex items-center justify-between px-4 py-2.5 text-sm text-[#555] hover:text-[#988060] hover:bg-[#988060]/5 rounded-lg transition-all duration-200"
+                        className="group flex items-center justify-between px-4 py-2.5 text-sm text-[#B8BDC7] hover:text-white hover:bg-[#ffffff08] rounded-xl transition-all duration-200"
                       >
                         {sub.label}
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#988060] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#C8A46B] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </Link>
                     ))}
                   </motion.div>
@@ -162,16 +138,16 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <button className="hidden lg:flex items-center gap-2 px-5 py-2.5 text-sm gold-gradient-bg text-white rounded-lg hover:opacity-90 hover:shadow-[0_0_20px_rgba(152,128,96,0.3)] transition-all duration-300 font-medium">
+            <button className="hidden lg:flex items-center gap-2 px-5 py-2.5 text-sm bg-gradient-to-r from-[#C8A46B] to-[#D6B98C] text-[#0B0B0C] rounded-xl hover:opacity-90 hover:shadow-[0_0_30px_rgba(200,164,107,0.3)] transition-all duration-300 font-semibold">
               Schedule a Tour
             </button>
 
             <button
-              className="lg:hidden relative z-10 w-10 h-10 rounded-lg flex items-center justify-center text-[#555] hover:text-[#1a1a1a] hover:bg-gray-100 transition-all duration-300"
+              className="lg:hidden relative z-10 w-10 h-10 rounded-xl flex items-center justify-center text-[#B8BDC7] hover:text-white hover:bg-[#ffffff08] transition-all duration-300"
               onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              <MenuToggle open={isMobileMenuOpen} />
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -184,7 +160,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-200 overflow-hidden"
+            className="lg:hidden bg-[#0B0B0C]/95 backdrop-blur-2xl border-t border-[#ffffff0a] overflow-hidden"
           >
             <div className="container-luxury py-4 space-y-0.5">
               {navLinks.map((link) =>
@@ -198,7 +174,7 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block px-4 py-3 text-[#555] hover:text-[#1a1a1a] hover:bg-gray-100 rounded-lg transition-all text-sm"
+                    className="block px-4 py-3 text-[#B8BDC7] hover:text-white hover:bg-[#ffffff08] rounded-xl transition-all text-sm"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -208,7 +184,7 @@ export default function Header() {
               <div className="pt-4 px-4">
                 <Link
                   href="/contact"
-                  className="flex items-center justify-center gap-2 w-full px-6 py-3 gold-gradient-bg text-white rounded-lg text-sm font-medium hover:shadow-[0_0_20px_rgba(152,128,96,0.3)] transition-all duration-300"
+                  className="flex items-center justify-center gap-2 w-full px-6 py-3 bg-gradient-to-r from-[#C8A46B] to-[#D6B98C] text-[#0B0B0C] rounded-xl text-sm font-semibold hover:shadow-[0_0_30px_rgba(200,164,107,0.3)] transition-all duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Schedule a Tour

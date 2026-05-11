@@ -8,7 +8,7 @@ export default function Badge({ children, variant = "gold", className = "" }: Ba
   const variants = {
     gold: "gold-gradient-bg text-white",
     navy: "bg-gray-800 text-white",
-    white: "bg-gray-100 text-gray-700",
+    white: "bg-[#ffffff1a] text-[#B8BDC7]",
     green: "bg-emerald-500/20 text-emerald-400",
     red: "bg-red-500/20 text-red-400",
     yellow: "bg-yellow-500/20 text-yellow-400",

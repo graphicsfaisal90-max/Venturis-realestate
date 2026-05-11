@@ -46,7 +46,7 @@ function AnimatedCounter({
       >
         {value.toLocaleString()}{suffix}
       </motion.div>
-      <div className="text-xs uppercase tracking-[0.15em] text-gray-400">
+      <div className="text-xs uppercase tracking-[0.15em] text-[#7D8590]">
         {label}
       </div>
     </motion.div>
@@ -74,7 +74,7 @@ export default function AboutSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 gold-gradient-bg rounded-2xl -z-10 opacity-50 blur-2xl" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-gray-100 rounded-2xl -z-10 opacity-80 blur-2xl" />
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#ffffff08] rounded-2xl -z-10 opacity-80 blur-2xl" />
           </motion.div>
 
           <motion.div
@@ -89,7 +89,7 @@ export default function AboutSection() {
               align="left"
             />
 
-            <div className="space-y-4 text-gray-600 leading-relaxed text-sm md:text-base mb-8">
+            <div className="space-y-4 text-[#B8BDC7] leading-relaxed text-sm md:text-base mb-8">
               <p>
                 Venturis Realtors was founded on a simple belief: that the
                 experience of finding and owning a luxury property should be as
@@ -120,7 +120,7 @@ export default function AboutSection() {
 
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 text-gold-400 hover:text-gold-300 font-medium text-sm tracking-wide transition-colors group"
+              className="inline-flex items-center gap-2 text-[#C8A46B] hover:text-[#D6B98C] font-medium text-sm tracking-wide transition-colors group"
             >
               Learn More About Us
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

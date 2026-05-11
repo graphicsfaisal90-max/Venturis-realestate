@@ -65,7 +65,7 @@ export default function ImageUpload({ currentImage, onUpload, label = "Image" }:
           className="w-full h-32 rounded-lg border-2 border-dashed border-[#333] hover:border-[#555] transition-colors flex flex-col items-center justify-center gap-2 text-[#666] hover:text-[#888] disabled:opacity-50"
         >
           {uploading ? (
-            <div className="w-5 h-5 border-2 border-[#988060] border-t-transparent rounded-full animate-spin" />
+            <div className="w-5 h-5 border-2 border-[#C8A46B] border-t-transparent rounded-full animate-spin" />
           ) : (
             <>
               <Upload size={20} />
@@ -140,7 +140,7 @@ export function GalleryUpload({ images, onImagesChange, label = "Gallery Images"
           className="aspect-square rounded-lg border-2 border-dashed border-[#333] hover:border-[#555] transition-colors flex flex-col items-center justify-center gap-1 text-[#666] hover:text-[#888] disabled:opacity-50"
         >
           {uploading ? (
-            <div className="w-5 h-5 border-2 border-[#988060] border-t-transparent rounded-full animate-spin" />
+            <div className="w-5 h-5 border-2 border-[#C8A46B] border-t-transparent rounded-full animate-spin" />
           ) : (
             <>
               <ImageIcon size={16} />

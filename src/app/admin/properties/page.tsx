@@ -50,7 +50,7 @@ export default function PropertiesPage() {
         </div>
         <Link
           href="/admin/properties/new"
-          className="flex items-center gap-2 px-5 py-2.5 bg-[#988060] text-black rounded-lg hover:bg-[#9D8653] transition-all text-sm font-medium shadow-lg shadow-[#988060]/20"
+          className="flex items-center gap-2 px-5 py-2.5 bg-[#C8A46B] text-black rounded-lg hover:bg-[#D6B98C] transition-all text-sm font-medium shadow-lg shadow-[#C8A46B]/20"
         >
           <Plus size={16} />
           Add Property
@@ -62,8 +62,8 @@ export default function PropertiesPage() {
           const Icon = stat.icon;
           return (
             <div key={stat.label} className="glass rounded-xl p-4 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-[#988060]/10 flex items-center justify-center flex-shrink-0">
-                <Icon size={18} className="text-[#988060]" />
+              <div className="w-10 h-10 rounded-lg bg-[#C8A46B]/10 flex items-center justify-center flex-shrink-0">
+                <Icon size={18} className="text-[#C8A46B]" />
               </div>
               <div>
                 <p className="text-xl font-bold text-white">{stat.value}</p>
@@ -83,7 +83,7 @@ export default function PropertiesPage() {
               placeholder="Search properties..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#988060] transition-colors"
+              className="w-full bg-[#1a1a1a] border border-[#333] rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder-[#666] focus:outline-none focus:border-[#C8A46B] transition-colors"
             />
           </div>
           <div className="flex items-center gap-1 bg-[#1a1a1a] rounded-lg border border-[#333] p-0.5">
@@ -150,10 +150,10 @@ export default function PropertiesPage() {
                       <button
                         onClick={() => toggleFeatured(property.id)}
                         className={`flex items-center gap-1.5 text-sm font-medium transition-colors ${
-                          property.isFeatured ? "text-[#988060]" : "text-[#555] hover:text-[#888]"
+                          property.isFeatured ? "text-[#C8A46B]" : "text-[#555] hover:text-[#888]"
                         }`}
                       >
-                        <Star size={14} className={property.isFeatured ? "fill-[#988060]" : ""} />
+                        <Star size={14} className={property.isFeatured ? "fill-[#C8A46B]" : ""} />
                         {property.isFeatured ? "Featured" : "Not Featured"}
                       </button>
                     </td>
@@ -188,7 +188,7 @@ export default function PropertiesPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((property) => (
-            <div key={property.id} className="glass rounded-xl overflow-hidden group hover:border-[#988060]/20 transition-all duration-300">
+            <div key={property.id} className="glass rounded-xl overflow-hidden group hover:border-[#C8A46B]/20 transition-all duration-300">
               <div className="relative h-40 bg-[#1a1a1a] overflow-hidden">
                 <img
                   src={`https://images.unsplash.com/${property.featuredImage}&w=400&h=300&fit=crop`}
@@ -218,12 +218,12 @@ export default function PropertiesPage() {
                 <div className="flex items-center justify-between mb-1">
                   <p className="text-sm font-semibold text-white truncate">{property.title}</p>
                   <button onClick={() => toggleFeatured(property.id)}>
-                    <Star size={14} className={property.isFeatured ? "text-[#988060] fill-[#988060]" : "text-[#555]"} />
+                    <Star size={14} className={property.isFeatured ? "text-[#C8A46B] fill-[#C8A46B]" : "text-[#555]"} />
                   </button>
                 </div>
                 <p className="text-[10px] text-[#555] uppercase tracking-wider mb-2">{property.location.city}, {property.location.state}</p>
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-bold text-[#988060] font-num">{formatPrice(property.price, property.currency)}</p>
+                  <p className="text-sm font-bold text-[#C8A46B] font-num">{formatPrice(property.price, property.currency)}</p>
                   <span className="text-[10px] text-[#555]">{propertyTypeLabels[property.type] || property.type}</span>
                 </div>
               </div>

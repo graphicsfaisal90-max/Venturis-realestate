@@ -23,8 +23,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       gold:
         "gold-gradient-bg text-white hover:opacity-90 active:scale-[0.97]",
       outline:
-        "border border-gray-300 text-gray-700 hover:bg-gray-50 active:scale-[0.97]",
-      ghost: "text-gray-500 hover:text-gray-900 hover:bg-gray-100",
+        "border border-[#ffffff1a] text-[#B8BDC7] hover:bg-[#ffffff08] active:scale-[0.97]",
+      ghost: "text-[#7D8590] hover:text-white hover:bg-[#ffffff08]",
     };
 
     const sizes = {

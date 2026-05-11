@@ -12,9 +12,9 @@ function StarRating({ rating }: { rating: number }) {
         <Star
           key={i}
           className={`w-3.5 h-3.5 ${
-            i < rating
-              ? "text-gold-400 fill-gold-400"
-              : "text-gray-200"
+              i < rating
+              ? "text-[#C8A46B] fill-[#C8A46B]"
+              : "text-[#ffffff20]"
           }`}
         />
       ))}
@@ -45,21 +45,21 @@ export default function Testimonials() {
               >
                 <StarRating rating={testimonial.rating} />
 
-                <p className="text-sm md:text-base text-gray-600 leading-relaxed mt-4 mb-6 line-clamp-3">
+                <p className="text-sm md:text-base text-[#B8BDC7] leading-relaxed mt-4 mb-6 line-clamp-3">
                   &ldquo;{testimonial.content}&rdquo;
                 </p>
 
-                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                <div className="flex items-center gap-3 pt-4 border-t border-[#ffffff08]">
                   <img
                     src={testimonial.clientImage}
                     alt={testimonial.clientName}
                     className="w-10 h-10 rounded-full object-cover"
                   />
                   <div>
-                    <div className="text-sm font-medium text-gray-900">
+                    <div className="text-sm font-medium text-white">
                       {testimonial.clientName}
                     </div>
-                    <div className="text-xs text-gray-400">
+                    <div className="text-xs text-[#7D8590]">
                       {testimonial.clientTitle}
                     </div>
                   </div>

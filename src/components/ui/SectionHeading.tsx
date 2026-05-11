@@ -27,13 +27,13 @@ export default function SectionHeading({ title, subtitle, align = "center", gold
       </div>
       <h2
         className={`text-3xl md:text-4xl lg:text-5xl font-bold leading-tight ${
-          gold ? "gold-gradient" : "text-gray-900"
+          gold ? "gold-gradient" : "text-white"
         }`}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-base md:text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto">
+        <p className="mt-4 text-base md:text-lg text-[#7D8590] leading-relaxed max-w-2xl mx-auto">
           {subtitle}
         </p>
       )}

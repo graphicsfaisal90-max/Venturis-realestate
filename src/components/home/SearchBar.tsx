@@ -37,7 +37,7 @@ export default function SearchBar() {
                 "px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300",
                 purpose === "buy"
                   ? "gold-gradient-bg text-white"
-                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                  : "text-[#7D8590] hover:text-white hover:bg-[#ffffff08]"
               )}
             >
               Buy
@@ -48,7 +48,7 @@ export default function SearchBar() {
                 "px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300",
                 purpose === "rent"
                   ? "gold-gradient-bg text-white"
-                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                  : "text-[#7D8590] hover:text-white hover:bg-[#ffffff08]"
               )}
             >
               Rent
@@ -57,29 +57,29 @@ export default function SearchBar() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-[#7D8590] mb-2">
                 Location
               </label>
               <input
                 type="text"
                 placeholder="City, address or ZIP"
-                className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gold-400/50 transition-colors"
+                className="w-full bg-[#111315] border border-[#ffffff1a] rounded-xl px-4 py-3 text-sm text-white placeholder-[#7D8590] focus:outline-none focus:border-[#C8A46B]/50 focus:ring-1 focus:ring-[#C8A46B]/20 transition-all"
               />
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-[#7D8590] mb-2">
                 Property Type
               </label>
-              <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
-                <option value="" className="bg-white">
+              <select className="w-full bg-[#111315] border border-[#ffffff1a] rounded-xl px-4 py-3 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-[#C8A46B]/50 focus:ring-1 focus:ring-[#C8A46B]/20 transition-all">
+                <option value="" className="bg-[#111315]">
                   Any Type
                 </option>
                 {propertyTypes.map((type) => (
                   <option
                     key={type.value}
                     value={type.value}
-                    className="bg-white"
+                    className="bg-[#111315]"
                   >
                     {type.label}
                   </option>
@@ -88,15 +88,15 @@ export default function SearchBar() {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-[#7D8590] mb-2">
                 Budget
               </label>
-              <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
+              <select className="w-full bg-[#111315] border border-[#ffffff1a] rounded-xl px-4 py-3 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-[#C8A46B]/50 focus:ring-1 focus:ring-[#C8A46B]/20 transition-all">
                 {budgets.map((budget) => (
                   <option
                     key={budget.value}
                     value={budget.value}
-                    className="bg-white"
+                    className="bg-[#111315]"
                   >
                     {budget.label}
                   </option>
@@ -105,15 +105,15 @@ export default function SearchBar() {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-[#7D8590] mb-2">
                 Bedrooms
               </label>
-              <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
+              <select className="w-full bg-[#111315] border border-[#ffffff1a] rounded-xl px-4 py-3 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-[#C8A46B]/50 focus:ring-1 focus:ring-[#C8A46B]/20 transition-all">
                 {bedBathOptions.map((opt) => (
                   <option
                     key={opt.value}
                     value={opt.value}
-                    className="bg-white"
+                    className="bg-[#111315]"
                   >
                     {opt.label}
                   </option>
@@ -122,15 +122,15 @@ export default function SearchBar() {
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase tracking-[0.15em] text-gray-400 mb-2">
+              <label className="block text-[10px] uppercase tracking-[0.15em] text-[#7D8590] mb-2">
                 Bathrooms
               </label>
-              <select className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3 text-sm text-gray-900 appearance-none cursor-pointer focus:outline-none focus:border-gold-400/50 transition-colors">
+              <select className="w-full bg-[#111315] border border-[#ffffff1a] rounded-xl px-4 py-3 text-sm text-white appearance-none cursor-pointer focus:outline-none focus:border-[#C8A46B]/50 focus:ring-1 focus:ring-[#C8A46B]/20 transition-all">
                 {bedBathOptions.map((opt) => (
                   <option
                     key={opt.value}
                     value={opt.value}
-                    className="bg-white"
+                    className="bg-[#111315]"
                   >
                     {opt.label}
                   </option>
@@ -140,7 +140,7 @@ export default function SearchBar() {
           </div>
 
           <div className="mt-4 flex justify-end">
-            <button className="gold-gradient-bg text-white px-8 py-3 rounded-lg text-sm font-medium tracking-wide hover:opacity-90 transition-all duration-300 active:scale-[0.97] flex items-center gap-2">
+            <button className="gold-gradient-bg text-white px-8 py-3 rounded-xl text-sm font-semibold tracking-wide hover:opacity-90 hover:shadow-[0_0_30px_rgba(200,164,107,0.3)] transition-all duration-300 active:scale-[0.97] flex items-center gap-2">
               <Search className="w-4 h-4" />
               Search Properties
             </button>
