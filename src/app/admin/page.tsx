@@ -30,7 +30,7 @@ export default function AdminDashboard() {
     { label: "Total Agents", value: stats.totalAgents, icon: Users, color: "text-green-400", bg: "bg-green-400/10" },
     { label: "Inquiries", value: stats.totalInquiries, icon: MessageSquare, color: "text-yellow-400", bg: "bg-yellow-400/10" },
     { label: "Messages", value: stats.totalMessages, icon: Mail, color: "text-purple-400", bg: "bg-purple-400/10" },
-    { label: "Featured Properties", value: stats.featuredProperties, icon: TrendingUp, color: "text-[#b8942e]", bg: "bg-[#b8942e]/10" },
+    { label: "Featured Properties", value: stats.featuredProperties, icon: TrendingUp, color: "text-[#988060]", bg: "bg-[#988060]/10" },
   ];
 
   const recentInquiries = [
@@ -81,7 +81,7 @@ export default function AdminDashboard() {
           </div>
           <Link
             href="/admin/inquiries"
-            className="inline-block mt-4 text-sm text-[#b8942e] hover:text-[#d4a843] transition-colors"
+            className="inline-block mt-4 text-sm text-[#988060] hover:text-[#9D8653] transition-colors"
           >
             View all inquiries →
           </Link>
@@ -92,9 +92,9 @@ export default function AdminDashboard() {
           <div className="grid grid-cols-2 gap-3">
             <Link
               href="/admin/properties/new"
-              className="p-4 rounded-lg bg-[#b8942e]/10 border border-[#b8942e]/20 hover:bg-[#b8942e]/20 transition-colors text-center"
+              className="p-4 rounded-lg bg-[#988060]/10 border border-[#988060]/20 hover:bg-[#988060]/20 transition-colors text-center"
             >
-              <Building2 size={20} className="mx-auto mb-2 text-[#b8942e]" />
+              <Building2 size={20} className="mx-auto mb-2 text-[#988060]" />
               <span className="text-sm text-white">Add Property</span>
             </Link>
             <Link

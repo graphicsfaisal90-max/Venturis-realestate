@@ -94,15 +94,6 @@ export default function EditPropertyPage() {
     }));
   };
 
-  const addImage = () => setForm((prev) => ({ ...prev, images: [...prev.images, ""] }));
-  const removeImage = (i: number) =>
-    setForm((prev) => ({ ...prev, images: prev.images.filter((_, idx) => idx !== i) }));
-  const updateImage = (i: number, val: string) => {
-    const images = [...form.images];
-    images[i] = val;
-    update("images", images);
-  };
-
   const addFeature = () => setForm((prev) => ({ ...prev, features: [...prev.features, ""] }));
   const removeFeature = (i: number) =>
     setForm((prev) => ({ ...prev, features: prev.features.filter((_, idx) => idx !== i) }));
